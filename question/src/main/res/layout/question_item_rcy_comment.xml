@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.question.ui.questionDetail.holder.CommentHolder" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:onClick="@{data::onClick}">
+
+
+        <ImageView
+            android:id="@+id/imgAvatar"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:error="@{data.errorImg}"
+            app:image="@{data.comment.replyUser.headImg.url}"
+            app:imageCircle="@{true}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{data.comment.replyUser.userName}"
+            android:textColor="@color/colorTextDarkWeek"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintEnd_toStartOf="@+id/imgAdopt"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+            app:layout_constraintTop_toTopOf="@+id/imgAvatar" />
+
+        <TextView
+            android:id="@+id/tvComment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{data.comment.del ? `该回复不存在或已删除` :data.comment.content}"
+            android:textColor="@{data.comment.del ? @color/textColorWeek : @color/colorBlack}"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{data.comment.replyTime}"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintBottom_toBottomOf="@+id/imgOppose"
+            app:layout_constraintStart_toStartOf="@+id/tvComment"
+            app:layout_constraintTop_toTopOf="@+id/imgOppose" />
+
+        <ImageView
+            android:id="@+id/imgOppose"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:onClick="@{data::onClick}"
+            android:scaleType="fitXY"
+            android:visibility="@{data.isShowReply}"
+            app:layout_constraintEnd_toStartOf="@+id/imgApproval"
+            app:layout_constraintHorizontal_bias="0.982"
+            app:layout_constraintStart_toEndOf="@+id/tvTime"
+            app:layout_constraintTop_toBottomOf="@+id/tvReply3"
+            app:srcCompat="@drawable/question_fandui" />
+
+        <View
+            android:id="@+id/view132"
+            android:layout_width="0dp"
+            android:layout_height="1px"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+            app:layout_constraintTop_toBottomOf="@+id/imgApproval" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvComment"
+            app:layout_constraintTop_toBottomOf="@+id/tvComment" />
+
+        <ImageView
+            android:id="@+id/imgAdopt"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:visibility="@{data.obsIsAdopt }"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/imgAvatar"
+            app:layout_constraintTop_toTopOf="@+id/imgAvatar"
+            app:srcCompat="@drawable/question_adopt" />
+
+        <ImageView
+            android:id="@+id/imgApproval"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="32dp"
+            android:onClick="@{data::onClick}"
+            android:scaleType="fitXY"
+            android:visibility="@{data.isShowReply}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imgOppose"
+            app:srcCompat="@drawable/question_zan" />
+
+        <TextView
+            android:id="@+id/tvReply1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/colorPageBg"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingStart="4dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text=""
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvComment"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+        <TextView
+            android:id="@+id/tvReply2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@color/colorPageBg"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingStart="4dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text=""
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvReply1"
+            app:layout_constraintTop_toBottomOf="@+id/tvReply1" />
+
+        <TextView
+            android:id="@+id/tvReply3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@color/colorPageBg"
+            android:onClick="@{data::onClick}"
+            android:paddingStart="4dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvReply2"
+            app:layout_constraintTop_toBottomOf="@+id/tvReply2" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

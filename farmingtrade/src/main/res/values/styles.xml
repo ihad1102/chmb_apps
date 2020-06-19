@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="MyAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowFrame">@null</item><!--移除边框-->
+        <item name="android:windowNoTitle">true</item><!--去除顶部标题栏-->
+        <item name="android:windowIsTranslucent">true</item><!--窗体透明-->
+        <item name="android:background">@android:color/transparent</item><!--背景透明-->
+        <item name="android:windowBackground">@android:color/transparent</item><!--窗体背景透明-->
+        <item name="android:windowIsFloating">true</item><!--窗体是否浮动-->
+        <item name="android:backgroundDimEnabled">true</item><!--背景是否昏暗-->
+        <item name="android:backgroundDimAmount">0.6</item><!--昏暗数量-->
+    </style>
+    <!--弹窗动画-->
+    <style name="PopupWindow">
+        <item name="android:windowEnterAnimation">@anim/window_in</item>
+        <item name="android:windowExitAnimation">@anim/window_out</item>
+    </style>
+    <!--圆角矩形-->
+    <style name="RoundedRectangleButton">
+        <item name="android:background">@drawable/farming_select_rounded_rectangle_button</item>
+        <item name="android:textColor">@color/colorTextWhite</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/textHuge</item>
+    </style>
+</resources>

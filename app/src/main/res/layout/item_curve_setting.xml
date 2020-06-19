@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.bakeMedicine.ui.curveSetting.holder.CurveSettingHolder" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTextWhite">
+
+        <TextView
+            android:id="@+id/textView86"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:text="@{data.title,default=`title`}"
+            android:textColor="@color/colorTextWhite"
+            android:background="@color/colorGreenDark"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toStartOf="@+id/textView87"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView87"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorGreenDark"
+            android:gravity="center"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="@{data.title2,default=`title2`}"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintBottom_toTopOf="@+id/textView117"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView86"
+            app:layout_constraintTop_toTopOf="@+id/textView86" />
+
+        <TextView
+            android:id="@+id/textView88"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="8dp"
+            android:text="干球目标"
+            android:textColor="@color/colorTextGrayWeek"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toStartOf="@+id/textView89"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView86" />
+
+        <TextView
+            android:id="@+id/textView89"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="湿球目标"
+            android:textColor="@color/colorTextGrayWeek"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintBottom_toBottomOf="@+id/textView88"
+            app:layout_constraintEnd_toStartOf="@+id/textView90"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView88"
+            app:layout_constraintTop_toTopOf="@+id/textView88" />
+
+        <TextView
+            android:id="@+id/textView90"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4px"
+            android:gravity="center"
+            android:text="干球目标"
+            android:textColor="@color/colorTextGrayWeek"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintBottom_toBottomOf="@+id/textView88"
+            app:layout_constraintEnd_toStartOf="@+id/textView91"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView89"
+            app:layout_constraintTop_toBottomOf="@+id/textView86" />
+
+        <TextView
+            android:id="@+id/textView91"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="湿球目标"
+            android:textColor="@color/colorTextGrayWeek"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintBottom_toTopOf="@+id/tvDryBulbTemp2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView90"
+            app:layout_constraintTop_toTopOf="@+id/textView90" />
+
+        <TextView
+            android:id="@+id/tvDryBulbTemp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingBottom="8dp"
+            android:text="@{data.dryBulbTempObs+` ℃`,default=`dryBulbTempObs`}"
+            android:textColor="@color/colorTextDark"
+            android:textSize="@dimen/textBig"
+            android:onClick="@{data::onClick}"
+            app:layout_constraintEnd_toStartOf="@+id/textView89"
+            app:layout_constraintStart_toStartOf="@+id/textView88"
+            app:layout_constraintTop_toBottomOf="@+id/textView88" />
+
+        <TextView
+            android:id="@+id/tvWetBulbTemp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center_horizontal"
+            android:text="@{data.wetBulbTempObs+` ℃`,default=`wetBulbTempObs`}"
+            android:textColor="@color/colorTextDark"
+            android:textSize="@dimen/textBig"
+            android:onClick="@{data::onClick}"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDryBulbTemp"
+            app:layout_constraintEnd_toStartOf="@+id/textView90"
+            app:layout_constraintStart_toStartOf="@+id/textView89"
+            app:layout_constraintTop_toTopOf="@+id/tvDryBulbTemp" />
+
+        <TextView
+            android:id="@+id/tvDryBulbTemp2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4px"
+            android:gravity="center_horizontal"
+            android:text="@{data.dryBulbTemp2Obs+` ℃`,default=`dryBulbTemp2Obs`}"
+            android:textColor="@color/colorTextDark"
+            android:textSize="@dimen/textBig"
+            android:onClick="@{data::onClick}"
+            app:layout_constraintBottom_toBottomOf="@+id/tvWetBulbTemp"
+            app:layout_constraintEnd_toStartOf="@+id/textView91"
+            app:layout_constraintStart_toStartOf="@+id/textView90"
+            app:layout_constraintTop_toTopOf="@+id/tvWetBulbTemp" />
+
+        <TextView
+            android:id="@+id/tvWetBulbTemp2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center_horizontal"
+            android:text="@{data.wetBulbTemp2Obs+` ℃`,default=`wetBulbTemp2Obs`}"
+            android:textColor="@color/colorTextDark"
+            android:textSize="@dimen/textBig"
+            android:onClick="@{data::onClick}"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDryBulbTemp2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvDryBulbTemp2"
+            app:layout_constraintTop_toTopOf="@+id/tvDryBulbTemp2" />
+
+        <TextView
+            android:id="@+id/textView104"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="8dp"
+            android:text="升温时间"
+            android:textColor="@color/colorTextGrayWeek"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toStartOf="@+id/textView105"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDryBulbTemp" />
+
+        <TextView
+            android:id="@+id/textView105"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="稳温时间"
+            android:textColor="@color/colorTextGrayWeek"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintBottom_toBottomOf="@+id/textView104"
+            app:layout_constraintEnd_toStartOf="@+id/textView106"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView104"
+            app:layout_constraintTop_toTopOf="@+id/textView104" />
+
+        <TextView
+            android:id="@+id/textView106"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4px"
+            android:gravity="center"
+            android:text="升温时间"
+            android:textColor="@color/colorTextGrayWeek"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintBottom_toBottomOf="@+id/textView105"
+            app:layout_constraintEnd_toStartOf="@+id/textView107"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView105"
+            app:layout_constraintTop_toTopOf="@+id/textView105" />
+
+        <TextView
+            android:id="@+id/textView107"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="稳温时间"
+            android:textColor="@color/colorTextGrayWeek"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintBottom_toBottomOf="@+id/textView106"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView106"
+            app:layout_constraintTop_toTopOf="@+id/textView106" />
+
+        <TextView
+            android:id="@+id/tvHeatingTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingBottom="8dp"
+            android:text="@{data.heatingTimeObs+` h`,default=`heatingTimeObs`}"
+            android:textColor="@color/colorTextDark"
+            android:textSize="@dimen/textBig"
+            android:onClick="@{data::onClick}"
+            app:layout_constraintEnd_toStartOf="@+id/tvKeepingTime"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView104" />
+
+        <TextView
+            android:id="@+id/tvKeepingTime"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center_horizontal"
+            android:text="@{data.keepingTimeObs+` h`,default=`keepingTimeObs`}"
+            android:textColor="@color/colorTextDark"
+            android:textSize="@dimen/textBig"
+            android:onClick="@{data::onClick}"
+            app:layout_constraintBottom_toBottomOf="@+id/tvHeatingTime"
+            app:layout_constraintEnd_toStartOf="@+id/tvHeatingTime2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvHeatingTime"
+            app:layout_constraintTop_toTopOf="@+id/tvHeatingTime" />
+
+        <TextView
+            android:id="@+id/tvHeatingTime2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4px"
+            android:gravity="center_horizontal"
+            android:text="@{data.heatingTime2Obs+` h`,default=`heatingTime2Obs`}"
+            android:textColor="@color/colorTextDark"
+            android:textSize="@dimen/textBig"
+            android:onClick="@{data::onClick}"
+            app:layout_constraintBottom_toBottomOf="@+id/tvKeepingTime"
+            app:layout_constraintEnd_toStartOf="@+id/tvKeepingTime2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvKeepingTime"
+            app:layout_constraintTop_toTopOf="@+id/tvKeepingTime" />
+
+        <TextView
+            android:id="@+id/tvKeepingTime2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center_horizontal"
+            android:text="@{data.keepingTime2Obs+` h`,default=`keepingTime2Obs`}"
+            android:textColor="@color/colorTextDark"
+            android:textSize="@dimen/textBig"
+            android:onClick="@{data::onClick}"
+            app:layout_constraintBottom_toBottomOf="@+id/tvHeatingTime2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvHeatingTime2"
+            app:layout_constraintTop_toTopOf="@+id/tvHeatingTime2" />
+
+        <TextView
+            android:id="@+id/textView112"
+            android:layout_width="4px"
+            android:layout_height="0dp"
+            android:background="@color/colorPageBg"
+            app:layout_constraintBottom_toBottomOf="@+id/tvKeepingTime"
+            app:layout_constraintStart_toStartOf="@+id/textView87"
+            app:layout_constraintTop_toTopOf="@+id/textView86" />
+
+        <View
+            android:id="@+id/textView113"
+            style="@style/DividerH"
+            app:layout_constraintEnd_toEndOf="@+id/textView91"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView86" />
+
+        <View
+            android:id="@+id/textView115"
+            style="@style/DividerH"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView104" />
+
+        <View
+            android:id="@+id/textView116"
+            style="@style/DividerH"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeatingTime" />
+
+        <View
+            android:id="@+id/textView117"
+            android:layout_width="1px"
+            android:layout_height="0dp"
+            android:background="@color/colorPageBg"
+            app:layout_constraintBottom_toBottomOf="@+id/tvHeatingTime"
+            app:layout_constraintStart_toStartOf="@+id/textView89"
+            app:layout_constraintTop_toBottomOf="@+id/textView86" />
+
+        <View
+            android:id="@+id/textView118"
+            android:layout_width="1px"
+            android:layout_height="0dp"
+            android:background="@color/colorPageBg"
+            app:layout_constraintBottom_toBottomOf="@+id/tvHeatingTime2"
+            app:layout_constraintStart_toStartOf="@+id/textView91"
+            app:layout_constraintTop_toTopOf="@+id/textView90" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

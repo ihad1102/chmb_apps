@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/actionFollow"
+        android:orderInCategory="100"
+        android:title="关注"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/actionUnFollow"
+        android:orderInCategory="100"
+        android:title="取消关注"
+        android:visible="false"
+        app:showAsAction="always" />
+</menu>

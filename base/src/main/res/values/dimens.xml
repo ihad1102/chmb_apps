@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="zToolbar">2dp</dimen>
+    <dimen name="toolbarHeight">56dp</dimen>
+    <dimen name="dividerWidth" >1px</dimen>
+    <dimen name="textTiny">8dp</dimen>
+    <dimen name="textSmall">10dp</dimen>
+    <dimen name="textNormal">12dp</dimen>
+    <dimen name="textBig">14dp</dimen>
+    <dimen name="textHuge">16dp</dimen>
+    <dimen name="textLarge">20dp</dimen>
+    <dimen name="textGreat">26dp</dimen>
+</resources>

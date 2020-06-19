@@ -1,0 +1,70 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+android {
+    compileSdkVersion var.compileSdkVersion
+    defaultConfig {
+        versionCode var.versionCode
+        versionName var.versionName
+        minSdkVersion var.minSdkVersion
+        targetSdkVersion var.targetSdkVersion
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+kapt {
+    arguments {
+        arg("moduleName", project.getName())
+        arg("eventBusIndex", "com.zzwl.farming.MyIndex")
+    }
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':base')
+    implementation project(':im')
+    implementation project(':sweet-dialog')
+    implementation var.appcompatV7
+    implementation var.design
+    implementation var.recyclerviewV7
+    implementation var.constraintLayout
+    implementation var.kotlin
+    implementation var.logger
+    implementation var.lifecycles
+    implementation var.lifecyclesRxSteams
+    kapt var.lifecyclesProcessor
+    implementation var.room
+    kapt var.roomProcessor
+    implementation var.retrofit
+    implementation var.rxandroid
+    implementation var.rxjava
+    implementation var.retrofitRxjava
+    implementation var.glide
+    implementation var.gson
+    debugImplementation var.leakcanaryDebug
+    releaseImplementation var.leakcanaryRelease
+    implementation var.rxPermission
+    implementation var.eventbus
+    implementation var.arouterApi
+    kapt var.arouteProcessor
+    implementation var.vLayout
+    kapt var.eventbusProcessor
+    implementation var.smartTabLayout
+    implementation var.smartTabLayout_utils
+    implementation var.addressSelector
+    implementation var.customPopwindow
+    implementation files('libs/alipaySdk-20170922.jar')
+    implementation(var.takePhoto) {
+        exclude group: 'io.reactivex'
+        exclude group: 'com.github.bumptech.glide'
+    }
+
+}

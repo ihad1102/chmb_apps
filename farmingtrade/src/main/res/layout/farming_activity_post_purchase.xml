@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.farmingtrade.ui.purchase.PostPurchaseActivity" />
+    </data>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="采购种类"
+                android:textColor="@color/colorTextWeekDark"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvGoodsKind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="8dp"
+                android:text="@{data.kindObs , default=``}"
+                android:textColor="@{data.kindColorObs ? @color/colorTextWeekDark : @color/textColorWeek}"
+                android:textSize="@dimen/textNormal"
+                app:layout_constraintBottom_toBottomOf="@+id/textView13"
+                app:layout_constraintEnd_toStartOf="@+id/imgCrop"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/textView13"
+                app:layout_constraintTop_toTopOf="@+id/textView13" />
+
+
+            <ImageView
+                android:id="@+id/imgCrop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/farming_ic_arrows_right"
+                app:layout_constraintBottom_toBottomOf="@+id/tvGoodsKind"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvGoodsKind" />
+
+            <View
+                android:id="@+id/view39"
+                style="@style/DividerH"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvGoodsKind" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="采购数量"
+                android:textColor="@color/colorTextWeekDark"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view39" />
+
+            <EditText
+                android:id="@+id/edtAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="8dp"
+                android:afterTextChanged="@{()->data.onEditTextChange()}"
+                android:background="@null"
+                android:hint="请输入你要采购的数量(整数)"
+                android:inputType="number"
+                android:maxLength="12"
+                android:text="@={data.amountObs}"
+                android:textColor="@color/colorTextWeekDark"
+                android:textSize="@dimen/textNormal"
+                app:layout_constraintBottom_toBottomOf="@+id/textView27"
+                app:layout_constraintEnd_toStartOf="@+id/textView39"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/textView27"
+                app:layout_constraintTop_toTopOf="@+id/textView27" />
+
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:text="公斤"
+                app:layout_constraintBottom_toBottomOf="@+id/edtAmount"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/edtAmount"
+                app:layout_constraintVertical_bias="0.51" />
+
+            <!--<ImageView-->
+            <!--android:id="@+id/imageView4"-->
+            <!--android:layout_width="10dp"-->
+            <!--android:layout_height="10dp"-->
+            <!--android:layout_marginEnd="16dp"-->
+            <!--app:layout_constraintBottom_toBottomOf="@+id/textView39"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="@+id/textView39"-->
+            <!--app:srcCompat="@color/colorYellow" />-->
+
+            <View
+                android:id="@+id/view40"
+                style="@style/DividerH"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtAmount" />
+
+            <TextView
+                android:id="@+id/textView41"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="规格要求"
+                android:textColor="@color/colorTextWeekDark"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view40" />
+
+            <EditText
+                android:id="@+id/edtSpecification"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="16dp"
+                android:afterTextChanged="@{()->data.onEditTextChange()}"
+                android:background="@null"
+                android:hint="请输入规格要求,最多输入6个字"
+                android:maxLength="6"
+                android:text="@={data.specificationObs}"
+                android:textColor="@color/colorTextWeekDark"
+                android:textSize="@dimen/textNormal"
+                app:layout_constraintBottom_toBottomOf="@+id/textView41"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/textView41"
+                app:layout_constraintTop_toTopOf="@+id/textView41" />
+
+            <View
+                android:id="@+id/view43"
+                style="@style/DividerH"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtSpecification" />
+
+            <TextView
+                android:id="@+id/textView44"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="包装要求"
+                android:textColor="@color/colorTextWeekDark"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view43" />
+
+            <EditText
+                android:id="@+id/edtPackage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="16dp"
+                android:afterTextChanged="@{()->data.onEditTextChange()}"
+                android:background="@null"
+                android:hint="请输入你的包装要求"
+                android:maxLength="40"
+                android:text="@={data.packageObs}"
+                android:textColor="@color/colorTextWeekDark"
+                android:textSize="@dimen/textNormal"
+                app:layout_constraintBottom_toBottomOf="@+id/textView44"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/textView44"
+                app:layout_constraintTop_toTopOf="@+id/textView44" />
+
+            <View
+                android:id="@+id/view47"
+                style="@style/DividerH"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView44" />
+
+            <TextView
+                android:id="@+id/textView48"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="货源地区"
+                android:textColor="@color/colorTextWeekDark"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view47" />
+
+            <TextView
+                android:id="@+id/edtDistrict1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:afterTextChanged="@{()->data.onEditTextChange()}"
+                android:background="@null"
+                android:hint="请选择期望的货源地区"
+                android:text="@={data.district1Obs}"
+                android:textColor="@color/colorTextWeekDark"
+                android:textSize="@dimen/textNormal"
+                app:layout_constraintBottom_toBottomOf="@+id/textView48"
+                app:layout_constraintStart_toEndOf="@+id/textView48"
+                app:layout_constraintTop_toTopOf="@+id/textView48" />
+
+            <View
+                android:id="@+id/view50"
+                style="@style/DividerH"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtDistrict3" />
+
+            <TextView
+                android:id="@+id/textView51"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="期望价格"
+                android:textColor="@color/colorTextWeekDark"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view50" />
+
+            <EditText
+                android:id="@+id/edtPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:afterTextChanged="@{()->data.onEditTextChange()}"
+                android:background="@null"
+                android:hint="请输入你的预期单价(元/公斤)"
+                android:inputType="numberDecimal"
+                android:maxLength="12"
+                android:text="@={data.priceObs}"
+                android:textColor="@color/colorTextWeekDark"
+                android:textSize="@dimen/textNormal"
+                app:layout_constraintBottom_toBottomOf="@+id/textView51"
+                app:layout_constraintStart_toEndOf="@+id/textView51"
+                app:layout_constraintTop_toTopOf="@+id/textView51" />
+
+            <View
+                android:id="@+id/view53"
+                style="@style/DividerH"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtPrice" />
+
+            <TextView
+                android:id="@+id/tvConfirm"
+                style="@style/RoundedRectangleButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:enabled="@{data.enabledObs}"
+                android:text="确认发布"
+                android:textColor="@color/colorTextWhite"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOtherInfo" />
+
+            <CheckBox
+                android:id="@+id/checkBoxPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
+                android:text="面议"
+                android:textColor="@color/colorTextWeekDark"
+                android:textSize="@dimen/textLarge"
+                app:layout_constraintBottom_toBottomOf="@+id/edtPrice"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/edtPrice" />
+
+            <CheckBox
+                android:id="@+id/checkBoxDistrict"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
+                android:text="全国"
+                android:textColor="@color/colorTextWeekDark"
+                android:textSize="@dimen/textLarge"
+                app:layout_constraintBottom_toTopOf="@+id/view50"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/edtDistrict1" />
+
+            <TextView
+                android:id="@+id/edtDistrict2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:afterTextChanged="@{()->data.onEditTextChange()}"
+                android:background="@null"
+                android:hint="请选择期望的货源地区"
+                android:text="@={data.district2Obs}"
+                android:textColor="@color/colorTextWeekDark"
+                android:textSize="@dimen/textNormal"
+                android:visibility="@{data.isShow2Obs}"
+                app:layout_constraintEnd_toEndOf="@+id/edtDistrict1"
+                app:layout_constraintStart_toStartOf="@+id/edtDistrict1"
+                app:layout_constraintTop_toBottomOf="@+id/edtDistrict1" />
+
+            <TextView
+                android:id="@+id/edtDistrict3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:afterTextChanged="@{()->data.onEditTextChange()}"
+                android:background="@null"
+                android:hint="请选择期望的货源地区"
+                android:text="@={data.district3Obs}"
+                android:textColor="@color/colorTextWeekDark"
+                android:textSize="@dimen/textNormal"
+                android:visibility="@{data.isShow3Obs}"
+                app:layout_constraintEnd_toEndOf="@+id/edtDistrict2"
+                app:layout_constraintStart_toStartOf="@+id/edtDistrict2"
+                app:layout_constraintTop_toBottomOf="@+id/edtDistrict2" />
+
+            <TextView
+                android:id="@+id/tvOther"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="其他说明"
+                android:textColor="@color/colorTextWeekDark"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view53" />
+
+            <EditText
+                android:id="@+id/tvOtherInfo"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@null"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:hint="最多输入80个字"
+                android:maxLength="80"
+                android:padding="4dp"
+                android:text="@={data.otherInfoObs}"
+                android:textColor="@color/textColorWeek"
+                android:textSize="@dimen/textNormal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvOther"
+                app:layout_constraintTop_toTopOf="@+id/tvOther" />
+
+            <!--<TextView-->
+            <!--android:id="@+id/viewCancel1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="8dp"-->
+            <!--android:text="TextView"-->
+            <!--app:layout_constraintBottom_toBottomOf="@+id/edtDistrict1"-->
+            <!--app:layout_constraintStart_toEndOf="@+id/edtDistrict1"-->
+            <!--app:layout_constraintTop_toTopOf="@+id/edtDistrict1" />-->
+
+            <ImageView
+                android:id="@+id/viewCancel2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/farming_ic_cancel"
+                android:visibility="@{data.isShow2Obs()}"
+                app:layout_constraintBottom_toBottomOf="@+id/edtDistrict2"
+                app:layout_constraintEnd_toStartOf="@+id/checkBoxDistrict"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/edtDistrict2"
+                app:layout_constraintTop_toTopOf="@+id/edtDistrict2" />
+
+            <ImageView
+                android:id="@+id/viewCancel3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/farming_ic_cancel"
+                android:visibility="@{data.isShow3Obs()}"
+                app:layout_constraintBottom_toBottomOf="@+id/edtDistrict3"
+                app:layout_constraintEnd_toStartOf="@+id/checkBoxDistrict"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/edtDistrict3"
+                app:layout_constraintTop_toTopOf="@+id/edtDistrict3" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</layout>

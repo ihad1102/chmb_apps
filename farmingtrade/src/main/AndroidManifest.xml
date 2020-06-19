@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.zzwl.farmingtrade">
+
+    <application tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="com.zzwl.farmingtrade.MainActivity"/>
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <activity
+            android:name="com.alipay.sdk.app.H5AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <!--供应商-->
+        <activity
+            android:name=".ui.purchase.PostPurchaseActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.ChoiceActivity"
+            android:noHistory="true" />
+        <activity
+            android:name=".ui.purchase.PurchaseHallActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".ui.purchase.BuyDetailsActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".ui.search.SearchActivity" />
+        <activity
+            android:name=".ui.search.TradeSearchResultActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".ui.supplier.PostSupplierActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.supplier.SupplierHallActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".ui.supplier.SupplierDetailsActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".ui.supplier.FarmingRetrospectActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".ui.myTrading.MyTradingActivity" />
+        <activity
+            android:name=".ui.CompleteInfoActivity"
+            android:noHistory="true" />
+        <activity
+            android:name=".ui.SwitchStatusActivity"
+            android:noHistory="true" />
+    </application>
+
+</manifest>

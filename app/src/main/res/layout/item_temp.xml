@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.bakeMedicine.ui.timeStatus.heatPump.holder.TempHolder" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorWhite">
+        <com.zzwl.bakeMedicine.weidget.ProgressRingView
+            android:id="@+id/progressRingView"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            app:pr_bg_end_color="#E8EbE5"
+            app:pr_bg_mid_color="#E8EbE5"
+            app:pr_bg_start_color="#E8EbE5"
+            app:pr_progress="25"
+            app:pr_progress_end_color="@color/colorGreen"
+            app:pr_progress_start_color="@color/colorAccent"
+            app:pr_progress_width="8dp"
+            app:pr_text="32℃"
+            app:pr_show_anim="false" />
+        <TextView
+            android:id="@+id/textView"
+            android:textColor="@color/colorTextWeek"
+            android:text="@{data.tempObs,default=`tempObs`}"
+            android:textSize="@dimen/textBig"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</layout>

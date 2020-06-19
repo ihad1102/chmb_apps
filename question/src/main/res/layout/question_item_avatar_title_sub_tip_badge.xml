@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.question.model.bindView.AvatarTitleTipBadgeBind" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ripple_item_background"
+        android:clickable="@{data.clickable}"
+        android:onClick="@{data::onClick}"
+        android:onLongClick="@{data::onLongClick}">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            app:image="@{data.avatar}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/SingleLineText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:text="@{data.title}"
+            android:textColor="@color/colorTextDark"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintEnd_toStartOf="@+id/tip"
+            app:layout_constraintStart_toEndOf="@+id/avatar"
+            app:layout_constraintTop_toTopOf="@+id/avatar"
+            tools:text="我的标题" />
+
+        <TextView
+            android:id="@+id/subTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{data.subtitle}"
+            android:textColor="@color/colorTextDark"
+            android:textSize="@dimen/textSmall"
+            app:layout_constraintBottom_toTopOf="@+id/divider"
+            app:layout_constraintEnd_toStartOf="@+id/badge"
+            app:layout_constraintStart_toEndOf="@+id/avatar"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="你的快递即将送达" />
+
+        <TextView
+            android:id="@+id/tip"
+            style="@style/SingleLineText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@{data.tip}"
+            android:textColor="@color/colorTextDark"
+            android:textSize="@dimen/textTiny"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/avatar"
+            tools:text="9月31日" />
+
+        <TextView
+            android:id="@+id/badge"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_badge"
+            android:gravity="center"
+            android:text="@{data.badge >= 99 ? `99` : data.badge.toString}"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="@dimen/textTiny"
+            android:visibility="@{data.badge > 0}"
+            app:layout_constraintBottom_toBottomOf="@+id/avatar"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="1" />
+
+        <View
+            android:id="@+id/divider"
+            style="@style/DividerH"
+            android:layout_width="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/avatar"
+            app:layout_constraintTop_toBottomOf="@+id/avatar" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

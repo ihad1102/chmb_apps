@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="data"
+            type="com.zzwl.farmingtrade.ui.crops.holder.CropHolder"/>
+    </data>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+    <ImageView
+        android:id="@+id/imgCrop"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="fitXY"
+        android:onClick="@{data::onClick}"
+        app:image="@{data.cropEntity.imgimage}"/>
+    <TextView
+        android:id="@+id/tvCropName"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@{data.cropEntity.name,default=`name`}"
+        android:gravity="center"
+        android:textSize="@dimen/textNormal"
+        android:paddingTop="8dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:paddingBottom="8dp"
+        android:layout_below="@+id/imgCrop"
+        android:textColor="@color/colorBlack" />
+    <ImageView
+        android:id="@+id/imgSelect"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:onClick="@{data::onClick}"
+        android:scaleType="fitXY"
+        android:visibility="@{data.imgSelect}"
+        android:src="@drawable/farming_ic_selceted"/>
+
+</RelativeLayout>
+
+</layout>

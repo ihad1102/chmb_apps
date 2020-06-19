@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.bakeMedicine.ui.curveSetting.holder.CurveTypeHolder" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvSelfCurve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@{data.typeObs==3 ? @drawable/shape_tobacco_green_dark_round_solid_2 : @drawable/shape_tobacco_color_bg_round_solid_2}"
+            android:paddingStart="8dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="2dp"
+            android:text="  自设  "
+            android:textColor="@{data.typeObs==3 ? @color/colorTextWhite : @color/colorGreenDark}"
+            android:textSize="@dimen/textBig"
+            android:onClick="@{data.onClick}"
+            app:layout_constraintEnd_toStartOf="@+id/tvUpper"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvUpper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@{data.typeObs==0 ? @drawable/shape_tobacco_green_dark_round_solid_2 : @drawable/shape_tobacco_color_bg_round_solid_2}"
+            android:paddingStart="8dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="2dp"
+            android:text="上部叶"
+            android:textColor="@{data.typeObs==0 ? @color/colorTextWhite : @color/colorGreenDark}"
+            android:textSize="@dimen/textBig"
+            android:onClick="@{data.onClick}"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSelfCurve"
+            app:layout_constraintEnd_toStartOf="@+id/tvMiddle"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvSelfCurve"
+            app:layout_constraintTop_toTopOf="@+id/tvSelfCurve" />
+
+        <TextView
+            android:id="@+id/tvMiddle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@{data.typeObs==1 ? @drawable/shape_tobacco_green_dark_round_solid_2 : @drawable/shape_tobacco_color_bg_round_solid_2}"
+            android:paddingStart="8dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="2dp"
+            android:text="中部叶"
+            android:textColor="@{data.typeObs==1 ? @color/colorTextWhite : @color/colorGreenDark}"
+            android:textSize="@dimen/textBig"
+            android:onClick="@{data.onClick}"
+            app:layout_constraintBottom_toBottomOf="@+id/tvUpper"
+            app:layout_constraintEnd_toStartOf="@+id/tvLower"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvUpper"
+            app:layout_constraintTop_toTopOf="@+id/tvUpper" />
+
+        <TextView
+            android:id="@+id/tvLower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@{data.typeObs==2 ? @drawable/shape_tobacco_green_dark_round_solid_2 : @drawable/shape_tobacco_color_bg_round_solid_2}"
+            android:paddingStart="8dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="2dp"
+            android:text="下部叶"
+            android:textColor="@{data.typeObs==2 ? @color/colorTextWhite : @color/colorGreenDark}"
+            android:textSize="@dimen/textBig"
+            android:onClick="@{data.onClick}"
+            app:layout_constraintBottom_toBottomOf="@+id/tvMiddle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvMiddle"
+            app:layout_constraintTop_toTopOf="@+id/tvMiddle" />
+
+        <TextView
+            android:id="@+id/textView85"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="曲线阶段设置"
+            android:textColor="@color/colorTextWeekDark"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSelfCurve" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

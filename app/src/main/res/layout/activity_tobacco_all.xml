@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.bakeMedicine.ui.tobaccoInfo.AllTobaccoActivity" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvRunning"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:background="@{data.isSelectedRunningObs ? @drawable/shape_tobacco_green_round_solid_2 : @drawable/shape_tobacco_green_round_2}"
+            android:gravity="center"
+            android:onClick="@{data::onClick}"
+            android:text="运行烤房"
+            android:textColor="@{data.isSelectedRunningObs ? @color/colorTextWhite : @color/colorGreen}"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toStartOf="@+id/tvFault"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvFault"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@{data.isSelectedFaultObs ?  @drawable/shape_tobacco_red_round_solid_2 : @drawable/shape_tobacco_red_round_2}"
+            android:gravity="center"
+            android:onClick="@{data::onClick}"
+            android:text="故障烤房"
+            android:textColor="@{data.isSelectedFaultObs ? @color/colorTextWhite : @color/colorRedDark}"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toStartOf="@+id/tvStop"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvRunning"
+            app:layout_constraintTop_toTopOf="@+id/tvRunning" />
+
+
+        <TextView
+            android:id="@+id/tvStop"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="24dp"
+            android:background="@{data.isSelectedStopObs ? @drawable/shape_tobacco_grey_round_solid_2 : @drawable/shape_tobacco_grey_round_2}"
+            android:gravity="center"
+            android:onClick="@{data::onClick}"
+            android:text="停用烤房"
+            android:textColor="@{data.isSelectedStopObs ? @color/colorTextWhite :  @color/colorTextGrey}"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvFault"
+            app:layout_constraintTop_toTopOf="@+id/tvFault" />
+
+        <View
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvFault" />
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        </FrameLayout>
+    </android.support.constraint.ConstraintLayout>
+</layout>

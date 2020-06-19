@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="data"
+            type="com.zzwl.question.ui.question.holder.FilterHolder" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="@dimen/textNormal"
+            android:padding="8dp"
+            android:gravity="center"
+            android:onClick="@{data::onClick}"
+            android:text="@{data.item ,default=`tvFilter`}"/>
+    </LinearLayout>
+</layout>

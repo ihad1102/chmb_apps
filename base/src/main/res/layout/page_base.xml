@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPageBg">
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--加载失败-->
+            <LinearLayout
+                android:id="@+id/errorRefresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:paddingBottom="72dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/imgErr"
+                    android:layout_width="108dp"
+                    android:layout_height="108dp"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/textErr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/colorTextDark"
+                    android:textSize="@dimen/textBig" />
+            </LinearLayout>
+
+            <!--加载中..-->
+            <LinearLayout
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:paddingBottom="72dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/loading_anim" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="努力加载中..."
+                    android:textColor="@color/colorTextDark"
+                    android:textSize="@dimen/textBig" />
+            </LinearLayout>
+
+            <!--请先登录-->
+            <LinearLayout
+                android:id="@+id/needOauthLay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:paddingBottom="72dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="你还没有登录哦~"
+                    android:textColor="@color/colorTextDark"
+                    android:textSize="@dimen/textBig" />
+
+                <Button
+                    android:id="@+id/toLogin"
+                    style="@style/RoundButtonOutline"
+                    android:layout_width="108dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="32dp"
+                    android:text="登录" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <View
+            android:id="@+id/statusBarMock"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/colorPrimaryDark" />
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</layout>

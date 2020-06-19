@@ -1,0 +1,2 @@
+-keep class com.tencent.bugly.**{*;}
+-keep class com.zzwl.bakeMedicine

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="data"
+            type="com.zzwl.farmingtrade.ui.crops.holder.CropTypeHolder"/>
+    </data>
+
+    <TextView
+        android:id="@+id/tvCropName"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:text="@{data.cropTypeEntity.name,default=`cropTypeEntity`}"
+        android:gravity="center"
+        android:textSize="@dimen/textBig"
+        android:textColor="@color/colorBlack"
+        android:background="@{data.observableField}"
+        android:onClick="@{data::onClick}"/>
+
+</layout>

@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.bakeMedicine.ui.home.fragment.PersonCenterFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView13"
+                android:layout_width="0dp"
+                android:layout_height="220dp"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_bg_person" />
+
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                app:image="@{data.imgUrl}"
+                app:imageCircle="@{true}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:placeholder="@{data.placeholder}" />
+
+            <TextView
+                android:id="@+id/textView55"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@{data.nickName,default=`nickName`}"
+                android:textColor="@color/colorTextWhite"
+                android:textSize="@dimen/textNormal"
+                app:layout_constraintEnd_toEndOf="@+id/imageView13"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+
+            <TextView
+                android:id="@+id/textView56"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@{data.nameObs,default=`realName`}"
+                android:textColor="@color/colorTextWhite"
+                android:textSize="@dimen/textNormal"
+                app:layout_constraintEnd_toStartOf="@+id/textView59"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView55" />
+
+            <TextView
+                android:id="@+id/textView57"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{data.telObs,default=`tel`}"
+                android:textColor="@color/colorTextWhite"
+                android:textSize="@dimen/textNormal"
+                app:layout_constraintStart_toStartOf="@+id/textView56"
+                app:layout_constraintTop_toBottomOf="@+id/textView56" />
+
+            <TextView
+                android:id="@+id/textView58"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="地        址："
+                android:textColor="@color/colorTextWhite"
+                android:textSize="@dimen/textNormal"
+                app:layout_constraintStart_toStartOf="@+id/textView57"
+                app:layout_constraintTop_toBottomOf="@+id/textView57" />
+
+            <TextView
+                android:id="@+id/textView59"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="48dp"
+                android:text="@{data.ageObs,default=`age`}"
+                android:textColor="@color/colorTextWhite"
+                android:textSize="@dimen/textNormal"
+                app:layout_constraintEnd_toEndOf="@+id/imageView13"
+                app:layout_constraintTop_toBottomOf="@+id/textView55" />
+
+            <TextView
+                android:id="@+id/textView60"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{data.sexObs,default=`sex`}"
+                android:textColor="@color/colorTextWhite"
+                android:textSize="@dimen/textNormal"
+                app:layout_constraintStart_toStartOf="@+id/textView59"
+                app:layout_constraintTop_toBottomOf="@+id/textView59" />
+
+            <TextView
+                android:id="@+id/textView61"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{data.addressObs,default=`address`}"
+                android:textColor="@color/colorTextWhite"
+                android:textSize="@dimen/textNormal"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView58"
+                app:layout_constraintTop_toTopOf="@+id/textView58"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tvCloseMessage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="8dp"
+                android:text="@{data.getCloseMessageObs() ,default=`getCloseMessageObs`}"
+                android:textColor="@color/colorTextWeek"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView15"
+                app:layout_constraintTop_toTopOf="@+id/imageView15" />
+
+            <View
+                android:id="@+id/textView63"
+                style="@style/DividerH"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+
+            <TextView
+                android:id="@+id/tvCleanCache"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="清空缓存"
+                android:textColor="@color/colorTextWeek"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvCloseMessage"
+                app:layout_constraintTop_toBottomOf="@+id/textView63" />
+
+            <View
+                android:id="@+id/textView65"
+                style="@style/DividerH"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCleanCache" />
+
+            <TextView
+                android:id="@+id/tvVersion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="版本信息"
+                android:textColor="@color/colorTextWeek"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvCleanCache"
+                app:layout_constraintTop_toBottomOf="@+id/textView65" />
+
+            <TextView
+                android:id="@+id/textView67"
+                style="@style/DividerH"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvVersion" />
+
+            <TextView
+                android:id="@+id/tvFeedBack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="意见反馈"
+                android:textColor="@color/colorTextWeek"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvVersion"
+                app:layout_constraintTop_toBottomOf="@+id/textView67" />
+
+            <View
+                android:id="@+id/textView69"
+                style="@style/DividerH"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvFeedBack" />
+
+            <TextView
+                android:id="@+id/tvLogout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="退出登录"
+                android:textColor="@color/colorTextWeek"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvFeedBack"
+                app:layout_constraintTop_toBottomOf="@+id/textView69" />
+
+            <ImageView
+                android:id="@+id/imageView15"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView93"
+                app:srcCompat="@drawable/ic_close_message" />
+
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvCleanCache"
+                app:layout_constraintEnd_toStartOf="@+id/tvCleanCache"
+                app:layout_constraintTop_toTopOf="@+id/tvCleanCache"
+                app:srcCompat="@drawable/ic_clean_cache" />
+
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvVersion"
+                app:layout_constraintEnd_toStartOf="@+id/tvVersion"
+                app:layout_constraintTop_toTopOf="@+id/tvVersion"
+                app:srcCompat="@drawable/ic_version_info" />
+
+            <ImageView
+                android:id="@+id/imageView18"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvFeedBack"
+                app:layout_constraintEnd_toStartOf="@+id/tvFeedBack"
+                app:layout_constraintTop_toTopOf="@+id/tvFeedBack"
+                app:srcCompat="@drawable/ic_feedback" />
+
+            <ImageView
+                android:id="@+id/imageView19"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvLogout"
+                app:layout_constraintEnd_toStartOf="@+id/tvLogout"
+                app:layout_constraintTop_toTopOf="@+id/tvLogout"
+                app:srcCompat="@drawable/ic_logout" />
+
+            <ImageView
+                android:id="@+id/imgMessage"
+                android:layout_width="24dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="16dp"
+                android:onClick="@{()->data.onClickMessage()}"
+                android:src="@drawable/ic_message"
+                android:paddingBottom="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/imgQuestion"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+
+            <ImageView
+                android:id="@+id/imgQuestion"
+                android:layout_width="24dp"
+                android:layout_height="32dp"
+                android:onClick="@{()->data.onClickQuestion()}"
+                android:src="@drawable/ic_my_question"
+                android:paddingBottom="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/imgNotice"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imgMessage"
+                app:layout_constraintTop_toTopOf="@+id/imgMessage" />
+
+            <ImageView
+                android:id="@+id/imgNotice"
+                android:layout_width="24dp"
+                android:layout_height="32dp"
+                android:onClick="@{()->data.onClickFollow()}"
+                android:src="@drawable/ic_my_follow"
+                android:paddingBottom="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/imgMyFollow"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imgQuestion"
+                app:layout_constraintTop_toTopOf="@+id/imgQuestion" />
+
+            <TextView
+                android:id="@+id/tvMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->data.onClickMessage()}"
+                android:text="我的消息"
+                android:textColor="@color/colorTextWeek"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintEnd_toEndOf="@+id/imgMessage"
+                app:layout_constraintStart_toStartOf="@+id/imgMessage"
+                app:layout_constraintTop_toBottomOf="@+id/imgMessage" />
+
+            <TextView
+                android:id="@+id/tvQuestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->data.onClickQuestion()}"
+                android:text="我的问题"
+                android:textColor="@color/colorTextWeek"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintEnd_toEndOf="@+id/imgQuestion"
+                app:layout_constraintStart_toStartOf="@+id/imgQuestion"
+                app:layout_constraintTop_toBottomOf="@+id/imgQuestion" />
+
+            <TextView
+                android:id="@+id/tvNotice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->data.onClickFollow()}"
+                android:text="我的关注"
+                android:textColor="@color/colorTextWeek"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintEnd_toEndOf="@+id/imgNotice"
+                app:layout_constraintStart_toStartOf="@+id/imgNotice"
+                app:layout_constraintTop_toBottomOf="@+id/imgNotice" />
+
+            <View
+                android:id="@+id/textView84"
+                android:layout_width="2px"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/colorPageBg"
+                app:layout_constraintBottom_toBottomOf="@+id/tvMessage"
+                app:layout_constraintEnd_toStartOf="@+id/imgQuestion"
+                app:layout_constraintStart_toEndOf="@+id/imgMessage"
+                app:layout_constraintTop_toTopOf="@+id/imgMessage" />
+
+            <View
+                android:id="@+id/textView92"
+                android:layout_width="2px"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/colorPageBg"
+                app:layout_constraintBottom_toBottomOf="@+id/tvQuestion"
+                app:layout_constraintEnd_toStartOf="@+id/imgNotice"
+                app:layout_constraintStart_toEndOf="@+id/imgQuestion"
+                app:layout_constraintTop_toTopOf="@+id/imgQuestion" />
+
+            <View
+                android:id="@+id/textView93"
+                android:layout_width="0dp"
+                android:layout_height="6dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvQuestion" />
+
+            <ImageView
+                android:id="@+id/imgMyFollow"
+                android:layout_width="24dp"
+                android:layout_height="32dp"
+                android:onClick="@{()->data.onClickNotice()}"
+                android:src="@drawable/ic_notice"
+                android:paddingBottom="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgNotice"
+                app:layout_constraintTop_toTopOf="@+id/imgNotice" />
+
+            <TextView
+                android:id="@+id/textView82"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->data.onClickNotice()}"
+                android:text="我的公告"
+                android:textColor="@color/colorTextWeek"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintEnd_toEndOf="@+id/imgMyFollow"
+                app:layout_constraintStart_toStartOf="@+id/imgMyFollow"
+                app:layout_constraintTop_toBottomOf="@+id/imgMyFollow" />
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+</layout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.question.ui.question.holder.PicHolder" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="100dp"
+        android:layout_height="100dp">
+
+        <ImageView
+            android:id="@+id/imgPic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="@{data.clickable}"
+            android:onClick="@{data::onClick}"
+            android:scaleType="centerCrop"
+            app:image="@{data.imgUrl}" />
+
+        <ImageView
+            android:id="@+id/imgCancel"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:onClick="@{data::onClick}"
+            android:scaleType="centerCrop"
+            android:src="@drawable/question_ic_cancel"
+            android:visibility="@{data.showCancelImg}" />
+    </RelativeLayout>
+</layout>

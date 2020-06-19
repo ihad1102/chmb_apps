@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.question.ui.expert.holder.SearchHolder" />
+    </data>
+    <LinearLayout
+        android:id="@+id/llSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPageBg"
+       >
+
+
+        <EditText
+            android:id="@+id/edtSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/question_shape_search_white"
+            android:drawableStart="@drawable/questionic_search_accent"
+            android:gravity="center"
+            android:hint="输入要搜索的内容"
+            android:imeOptions="actionSearch"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:textSize="@dimen/textBig" />
+
+        <TextView
+            android:id="@+id/tvSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="16dp"
+            android:text="筛选"
+            android:onClick="@{data::onClick}"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/textBig" />
+    </LinearLayout>
+
+</layout>

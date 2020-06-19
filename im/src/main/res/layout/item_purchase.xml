@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.im.ui.chat.models.PurchaseViewBind" />
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@color/colorItemBackground"
+        app:cardElevation="1dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="采购信息"
+                android:textColor="@color/colorTextDark"
+                android:textSize="@dimen/textLarge"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tipCrop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="品种 : "
+                android:textColor="@color/colorTextDarkWeek"
+                android:textSize="@dimen/textBig"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tipAmount" />
+
+            <TextView
+                android:id="@+id/tipAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="数量 : "
+                android:textColor="@color/colorTextDarkWeek"
+                android:textSize="@dimen/textBig"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tipPrice" />
+
+            <TextView
+                android:id="@+id/tipPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="价格 : "
+                android:textColor="@color/colorTextDarkWeek"
+                android:textSize="@dimen/textBig"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title" />
+
+
+            <TextView
+                android:id="@+id/crop"
+                style="@style/SingleLineText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{data.crop}"
+                android:textColor="@color/colorTextDark"
+                android:textSize="@dimen/textHuge"
+                app:layout_constraintBottom_toBottomOf="@+id/tipCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tipCrop"
+                app:layout_constraintTop_toTopOf="@+id/tipCrop"
+                tools:text="品种" />
+
+            <TextView
+                android:id="@+id/amount"
+                style="@style/SingleLineText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{data.amount}"
+                android:textColor="@color/colorTextDark"
+                android:textSize="@dimen/textHuge"
+                app:layout_constraintBottom_toBottomOf="@+id/tipAmount"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tipAmount"
+                app:layout_constraintTop_toTopOf="@+id/tipAmount"
+                tools:text="数量" />
+
+            <TextView
+                android:id="@+id/price"
+                style="@style/SingleLineText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{data.price}"
+                android:textColor="@color/colorTextDark"
+                android:textSize="@dimen/textHuge"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tipPrice"
+                app:layout_constraintTop_toTopOf="@+id/tipPrice"
+                tools:text="价格" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</layout>

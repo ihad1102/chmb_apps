@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.question.ui.expert.holder.ExpertFiltrateHolder" />
+    </data>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@{data.isSelectedObs() ? @drawable/question_shape_expert_tag_accent : @drawable/question_shape_expert_tag}"
+        android:maxLength="8"
+        android:padding="6dp"
+        android:singleLine="true"
+        android:gravity="center"
+        android:onClick="@{data::onClick}"
+        android:text="@{data.text,default=`test`}"
+        android:textColor="@{data.isSelectedObs() ? @color/colorTextWhite : @color/colorTextDarkWeek}"
+        android:textSize="@dimen/textBig" />
+</layout>

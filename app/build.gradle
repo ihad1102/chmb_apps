@@ -1,0 +1,130 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
+
+static def  releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+android {
+    compileSdkVersion var.compileSdkVersion
+    defaultConfig {
+        applicationId "com.zzwl.bakeMedicine"
+        minSdkVersion var.minSdkVersion
+        targetSdkVersion var.targetSdkVersion
+        versionCode var.versionCode
+        versionName var.versionName
+        multiDexEnabled true
+        multiDexKeepProguard file("../multidexkeep.pro")
+        ndk{
+            abiFilters 'armeabi', 'armeabi-v7a'
+        }
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : "com.zzwl.bakeMedicine",
+                JPUSH_APPKEY : "b2a0ba575f9d0caecf26a0d3", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    dataBinding {
+        enabled = true
+    }
+
+    sourceSets{
+        main{
+            jniLibs.srcDir 'libs'
+        }
+    }
+//    signingConfigs {
+//        release {
+//            keyAlias 'key0'
+//            keyPassword 'admin2tomsung.123'
+//            storePassword 'admin2tomsung.123'
+//            storeFile file('../medicine.jks')
+//        }
+//        debug {
+//            keyAlias 'key0'
+//            keyPassword 'admin2tomsung.123'
+//            storePassword 'admin2tomsung.123'
+//            storeFile file('../medicine.jks')
+//        }
+//    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            useProguard false
+//            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            useProguard false
+//            signingConfig signingConfigs.debug
+        }
+    }
+
+}
+
+
+kapt {
+    arguments {
+        arg("moduleName", project.getName())
+        arg("eventBusIndex", "com.zzwl.bakeMedicine.MyIndex")
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':base')
+    implementation project(':information')
+    implementation project(':question')
+    implementation project(':farmingtrade')
+    implementation project(':sweet-dialog')
+    implementation var.appcompatV7
+    implementation var.design
+    implementation var.recyclerviewV7
+    implementation var.constraintLayout
+    implementation var.kotlin
+    implementation var.logger
+    implementation var.lifecycles
+    implementation var.lifecyclesRxSteams
+    kapt var.lifecyclesProcessor
+    implementation var.room
+    kapt var.roomProcessor
+    implementation var.retrofit
+    implementation var.rxandroid
+    implementation var.rxjava
+    implementation var.retrofitRxjava
+    implementation var.glide
+    implementation var.gson
+    debugImplementation var.leakcanaryDebug
+    releaseImplementation var.leakcanaryRelease
+    implementation var.rxPermission
+    implementation var.eventbus
+    implementation var.arouterApi
+    kapt var.arouteProcessor
+    implementation var.vLayout
+    kapt var.eventbusProcessor
+    implementation var.smartTabLayout
+    implementation var.smartTabLayout_utils
+    implementation var.dropDownMenu
+    implementation var.bugly
+    implementation var.qrCode
+    implementation files('libs/BaiduLBS_Android.jar')
+    implementation var.mpCharts
+    implementation var.rxLocation
+    implementation var.jpush
+    implementation var.jcore
+    implementation "com.ashokvarma.android:bottom-navigation-bar:2.0.5"
+    implementation var.cardLayout
+    implementation(var.takePhoto) {
+        exclude group: 'io.reactivex'
+        exclude group: 'com.github.bumptech.glide'
+    }
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation files('libs/youtu-java-sdk.jar')
+    implementation files('libs/sdk_HeWeather_Public_Android_V1.8.jar')
+}

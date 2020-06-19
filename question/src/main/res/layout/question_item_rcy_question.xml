@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.question.ui.question.holder.BBSQuestionHolder" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorWhite"
+        android:onClick="@{data::onClick}">
+
+        <ImageView
+            android:id="@+id/imgAvator"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:error="@{data.errorImg}"
+            app:image="@{data.questionEntity.postUser.headimg}"
+            app:imageCircle="@{true}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView122" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@{data.questionEntity.postUser.username}"
+            android:textColor="@color/colorTextDarkWeek"
+            app:layout_constraintBottom_toBottomOf="@+id/imgAvator"
+            app:layout_constraintStart_toEndOf="@+id/imgAvator"
+            app:layout_constraintTop_toTopOf="@+id/imgAvator" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@{data.time,default=`time`}"
+            android:textColor="@color/colorTextGrayWeek"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tvName"
+            app:layout_constraintTop_toTopOf="@+id/tvName" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            app:layout_constraintDimensionRatio="w,1:3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgAvator"
+            app:nestedScrollingEnabled="@{false}" />
+
+        <!--<ImageView-->
+        <!--android:id="@+id/imgType"-->
+        <!--android:layout_width="24dp"-->
+        <!--android:layout_height="24dp"-->
+        <!--android:layout_marginStart="16dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:background="@drawable/crop"-->
+        <!--app:backgroundTint="@{@color/colorAccent}"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/tvContent" />-->
+
+        <TextView
+            android:id="@+id/tvContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:lineSpacingMultiplier="1.2"
+            android:text="@{data.questionEntity.content,default=`conten`}"
+            android:textColor="@color/colorTextGray"
+            android:textSize="@dimen/textHuge"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@{data.questionEntity.location,default=`test`}"
+            android:textColor="@color/colorTextGrayWeek"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvContent" />
+
+        <TextView
+            android:id="@+id/tvCommentAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:paddingBottom="1dp"
+            android:text="@{data.commentCountObs.toString, default=`1`}"
+            android:textColor="@color/colorTextGrayWeek"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView27"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView27"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/imageView27"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/question_ic_comment"
+            app:backgroundTint="@{@color/colorAccent}"
+            app:layout_constraintBottom_toBottomOf="@+id/tvLocation"
+            app:layout_constraintEnd_toStartOf="@+id/tvCommentAmount"
+            app:layout_constraintTop_toTopOf="@+id/tvLocation" />
+
+        <TextView
+            android:id="@+id/textView87"
+            style="@style/DividerH"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <View
+            android:id="@+id/textView122"
+            style="@style/DividerH"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

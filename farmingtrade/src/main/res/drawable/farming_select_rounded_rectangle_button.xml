@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/farming_shape_rounded_rectangle_select" android:state_pressed="true" />
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="4dp"/>
+            <solid  android:color="@color/colorTextDarkWeek"/>
+        </shape>
+    </item>
+    <item android:drawable="@drawable/farming_shape_rounded_rectangle_primary_4dp" />
+</selector>

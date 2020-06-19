@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        list-style: none;
+        text-decoration: none;
+    }
+    body{
+        width: 100%;
+        height: 100%;
+        font-family: '微软雅黑';
+    }
+    header{
+        width: 100%;
+        padding:0.3rem 0;
+        background:#026A52;
+        text-align: center;
+        font-size: 0.28rem;
+        font-family: '微软雅黑';
+        color: #fff;
+        letter-spacing: 0.05rem;
+        position: fixed;
+        top:0;
+        left:0;
+        z-index:100;
+    }
+    .banner{
+        width: 100%;
+        height: 3.4rem;
+        margin-top: 1rem;
+        position: relative;
+        overflow: hidden;
+    }
+    .picture>li{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:0;
+        left:0;
+        display: none;
+    }
+    .picture>li:first-child{
+        display: block;
+    }
+    .picture>li>img{
+        width: 100%;
+        height: 100%;
+    }
+    /*轮播点*/
+    .points{
+        width:0.6rem;
+        height: 0.3rem;
+        position: absolute;
+        bottom:0.4rem;
+        left:50%;
+        margin-left: -0.3rem;
+        z-index: 99;
+    }
+    .point{
+        width: 0.15rem;
+        height: 0.15rem;
+        background:rgba(0,0,0,0.5);
+        border-radius: 50%;
+        margin-right: 0.1rem;
+        float: left;
+    }
+    .hot{
+        background:#4cb050;
+    }
+    .items{
+        width: 100%;
+        height: 2.5rem;
+        background: #fff;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: center;
+        text-align: center;
+        margin-top: 0.2rem;
+    }
+    .items>li{
+        float:left;
+        width: 1.5rem;
+        height:1.5rem;
+    }
+    .items>li>img{
+        width: 0.84rem;
+        height: 0.84rem;
+        border-radius: 50%;
+    }
+    .items>li>div{
+        font-size:0.2rem;
+        margin-top: -0.2rem;
+    }
+    .notice{
+        width: 100%;
+        height: 0.4rem;
+        margin-top: 0.6rem;
+        display: flex;
+        align-items: center;
+        border-top:0.01rem solid #dcdcdc;
+        border-bottom:0.01rem solid #dcdcdc;
+    }
+    .notice>span{
+        color:#026A52 ;
+        margin-left: 0.4rem;
+        font-size: 0.2rem;
+        margin-right: 0.4rem;
+    }
+    .notice>.noticeItem>li{
+        width:5.5rem;
+        color: #000;
+        font-size: 0.2rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display:none;
+    }
+    .notice>.noticeItem>li:first-child{
+        display: block;
+    }
+    .shop{
+        width: 100%;
+        height: 1rem;
+        background:#f5f5f5;
+        overflow: hidden;
+    }
+    .shop>div:first-child{
+        font-size: 0.28rem;
+        font-weight: 800;
+        color: #000;
+        margin: 0.08rem 0;
+        text-align: center;
+        letter-spacing: 0.05rem;
+    }
+    .shop>div:nth-child(2){
+        color: #636363;
+        font-size: 0.2rem;
+        text-align: center;
+    }
+    .goods{
+        width: 100%;
+        height: 8rem;
+        background:#f5f5f5;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .goods>a{
+        display: block;
+        color: #000;
+        font-size: 0.22rem;
+        width:48%;
+        height: 48%;
+        background:#fff;
+        float:left;
+        margin-bottom: 0.2rem;
+    }
+    .Img{
+        width: 100%;
+        height:3rem;
+    }
+    .text{
+        font-size:0.22rem;
+        color: #000;
+        padding-bottom: 0.2rem;
+        margin-left: 0.2rem;
+    }
+</style>
+
+<body>
+<header>精准烘烤</header>
+<section class="banner">
+    <ul class="picture">
+        <li><img src="img/banner1.jpg" alt=""></li>
+        <li><img src="img/banner2.jpg" alt=""></li>
+    </ul>
+    <ul class="points">
+        <li class="point hot"></li>
+        <li class="point "></li>
+    </ul>
+</section>
+<ul class="items">
+    <li>
+        <img src="img/flower.png" alt="">
+        <div>合作社管家</div>
+    </li>
+    <li>
+        <img src="img/shop.png" alt="">
+        <div>合作社商城</div>
+    </li>
+    <li>
+        <img src="img/study.png" alt="">
+        <div>培训学习</div>
+    </li>
+    <li>
+        <img src="img/sever.png" alt="">
+        <div>维保服务</div>
+    </li>
+    <li>
+        <img src="img/bank.png" alt="">
+        <div>银行服务</div>
+    </li>
+    <li>
+        <img src="img/order.png" alt="">
+        <div>农资预订</div>
+    </li>
+    <li>
+        <img src="img/farm.png" alt="">
+        <div>土地流转</div>
+    </li>
+    <li>
+        <img src="img/person.png" alt="">
+        <div>乡土人才</div>
+    </li>
+</ul>
+<section class="notice">
+    <span>今日头条</span>
+    <ul class="noticeItem">
+        <li>生物燃料环保低碳，走进千家万户</li>
+        <li>生物燃料泛指由生物质组成或萃取的固体、液体或气体燃料生物燃料泛指由生物质组成或萃取的固体、液体或气体燃料</li>
+        <li>燃料乙醇“遇东风” 中粮生化重组稳步推进</li>
+    </ul>
+</section>
+<section class="shop">
+    <div>生物燃料</div>
+    <div>生物燃料、烤房配件就找精准烘烤</div>
+</section>
+<ul class="goods">
+    <a href="goods1.html">
+        <li>
+            <img src="img/goods1.png" alt="" class="Img">
+            <div class="text">
+                秸秆颗粒燃料<br>
+                <span style="color: #f36132;font-size: 0.2rem">￥<span style="font-size: 0.3rem;font-weight:800">980</span></span>
+            </div>
+        </li>
+    </a>
+    <a href="goods2.html">
+        <li>
+            <img src="img/goods2.png" alt="" class="Img">
+            <div class="text">
+                生物质燃料锯末木屑燃料<br>
+                <span style="color: #f36132;font-size: 0.2rem">￥<span style="font-size: 0.3rem;font-weight:800">850</span></span>
+            </div>
+        </li>
+    </a>
+    <a href="goods3.html">
+        <li>
+            <img src="img/goods3.png" alt="" class="Img">
+            <div class="text">
+                生物质燃料锯稻壳燃料环保<br>
+                <span style="color: #f36132;font-size: 0.2rem">￥<span style="font-size: 0.3rem;font-weight:800">1000</span></span>
+            </div>
+        </li>
+    </a>
+    <a href="goods4.html">
+        <li>
+            <img src="img/goods4.png" alt="" class="Img">
+            <div class="text">
+                清洁能源加强型 生物质燃料<br>
+                <span style="color: #f36132;font-size: 0.2rem">￥<span style="font-size: 0.3rem;font-weight:800">1200</span></span>
+            </div>
+        </li>
+    </a>
+</ul>
+</body>
+</html>
+
+<script>
+    // rem.js
+    window.onload = function(){
+        getRem(720,100)
+    };
+    window.onresize = function(){
+        getRem(720,100)
+    };
+    function getRem(pwidth,prem){
+        var html = document.getElementsByTagName("html")[0];
+        var oWidth = document.body.clientWidth || document.documentElement.clientWidth;
+        html.style.fontSize = oWidth/pwidth*prem + "px";
+    }
+    // 头条轮播
+    var noticeNum = document.querySelectorAll('.noticeItem>li')
+    var t = 0;
+    var num = 0;
+    t=setInterval(move,3000)
+    function move () {
+        num=num+1
+        if(num == noticeNum.length){
+            num =0;
+        }
+        for(var i=0;i<noticeNum.length;i++){
+            noticeNum[i].style.display='none'
+        }
+        noticeNum[num].style.display = 'block'
+    }
+    // 轮播图
+    var picture=document.querySelector('.picture');
+    var img=document.querySelectorAll('.picture>li');
+    var points=document.querySelectorAll('.points>li');
+    var t1=0;
+    var num1=0;
+    t1=setInterval(display,3000)
+    function display () {
+        num1=num1+1
+        if(num1 == img.length){
+            num1 =0;
+        }
+        for(var i=0;i<img.length;i++){
+            img[i].style.display='none'
+            points[i].classList.remove('hot')
+        }
+        img[num1].style.display = 'block'
+        points[num1].classList.add('hot')
+    }
+</script>

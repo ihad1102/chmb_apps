@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.farmingtrade.ui.supplier.holder.CropHolder" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{data::onClick}">
+
+        <TextView
+            android:id="@+id/tvCropName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@{data.framingCropEntity.cropName ,default=`cropname`}"
+            android:textColor="@color/colorTextWeekDark"
+            android:textSize="@dimen/textHuge"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView168"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:text="批次:"
+            android:textColor="@color/colorTextWeekDark"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCropName" />
+
+        <TextView
+            android:id="@+id/tvBatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@{data.framingCropEntity.batch,default=`batch`}"
+            android:textColor="@color/textColorWeek"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintBottom_toBottomOf="@+id/textView168"
+            app:layout_constraintStart_toEndOf="@+id/textView168"
+            app:layout_constraintTop_toTopOf="@+id/textView168" />
+
+        <TextView
+            android:id="@+id/textView183"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:text="负责人:"
+            android:textColor="@color/colorTextWeekDark"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView168" />
+
+        <TextView
+            android:id="@+id/tvPrincipal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@{data.framingCropEntity.principal ,default=`Principal` }"
+            android:textColor="@color/textColorWeek"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintBottom_toBottomOf="@+id/textView183"
+            app:layout_constraintStart_toEndOf="@+id/textView183"
+            app:layout_constraintTop_toTopOf="@+id/textView183" />
+
+        <View
+            android:id="@+id/textView150"
+            style="@style/DividerH"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPrincipal" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

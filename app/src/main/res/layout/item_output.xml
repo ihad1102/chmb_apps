@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.bakeMedicine.ui.timeStatus.heatPump.holder.OutputHolder" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="4dp"
+        >
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@{data.machineStatusObs ? @color/colorGreen : @color/colorBgGray}">
+
+
+            <TextView
+                android:id="@+id/textView130"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@{data.machineNameObs,default=`machineNameObs`}"
+                android:textColor="@{data.machineStatusObs ? @color/whiteTranslucence : @color/colorTextWeekDark}"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView131"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:text="@{data.workStatusObs,default=`workStatusObs`}"
+                android:textColor="@{data.machineStatusObs ? @color/whiteTranslucence : @color/colorTextWeekDark}"
+                android:textSize="@dimen/textHuge"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView130" />
+
+            <ImageView
+                android:id="@+id/imageView23"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="2dp"
+                android:src="@{data.machineStatusObs ? @drawable/ic_work_white : @drawable/ic_work_gray}"
+                app:layout_constraintBottom_toBottomOf="@+id/textView131"
+                app:layout_constraintEnd_toStartOf="@+id/textView131"
+                app:layout_constraintTop_toTopOf="@+id/textView131"
+                app:layout_constraintVertical_bias="0.94" />
+
+            <ImageView
+                android:id="@+id/imageView223"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView23"
+                app:srcCompat="@drawable/ic_tool" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</layout>

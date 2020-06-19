@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.bakeMedicine.ui.scanQrCode.ScanActivity" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <cn.bingoogolapple.qrcode.zxing.ZXingView
+            android:id="@+id/zxingView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:qrcv_animTime="1000"
+            app:qrcv_borderColor="@android:color/white"
+            app:qrcv_borderSize="1dp"
+            app:qrcv_cornerColor="@color/colorAccent"
+            app:qrcv_cornerLength="20dp"
+            app:qrcv_cornerSize="3dp"
+            app:qrcv_isCenterVertical="true"
+            app:qrcv_maskColor="#33FFFFFF"
+            app:qrcv_rectWidth="200dp"
+            app:qrcv_scanLineColor="@color/colorAccent"
+            app:qrcv_scanLineSize="1dp">
+
+        </cn.bingoogolapple.qrcode.zxing.ZXingView>
+
+        <ImageView
+            android:id="@+id/imgLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@{data.isSelectedBgObs ? @drawable/ic_light_press: @drawable/ic_light}"
+            app:layout_constraintEnd_toStartOf="@+id/imgGallery"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/imgBack"
+            app:layout_constraintTop_toTopOf="@+id/imgBack" />
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/selector_press_back"
+            app:layout_constraintEnd_toStartOf="@+id/imgLight"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgGallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/selector_press_gallery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgLight"
+            app:layout_constraintTop_toTopOf="@+id/imgLight" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

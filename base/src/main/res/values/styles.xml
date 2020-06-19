@@ -1,0 +1,85 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+    </style>
+
+    <!-- ToolBar样式 -->
+    <style name="ToolbarStyle">
+        <item name="titleTextAppearance">@style/ToolbarTextAppearance</item>
+        <item name="titleTextColor">@color/colorToolbarContentColor</item>
+        <item name="contentInsetEnd">16dp</item>
+        <item name="contentInsetStart">16dp</item>
+        <item name="android:background">@drawable/shape_gradient_primary</item>
+    </style>
+    <!-- ToolBar样式 -->
+    <style name="ToolbarTheme">
+        <item name="colorControlNormal">@color/colorToolbarContentColor</item>
+        <item name="actionBarSize">@dimen/toolbarHeight</item>
+
+        <!-- Action Bar Styles -->
+        <item name="actionMenuTextAppearance">@style/ToolbarTextAppearance</item>
+        <item name="titleTextStyle">@style/ToolbarTextAppearance</item>
+        <item name="actionMenuTextColor">@color/colorToolbarContentColor</item>
+
+        <!-- Action Mode -->
+        <item name="actionModeStyle">@style/AppbarStyle</item>
+        <item name="actionModeCloseDrawable">@drawable/ic_arrow_back_toolbar_24dp</item>
+    </style>
+
+    <style name="AppbarStyle" >
+        <item name="height">@dimen/toolbarHeight</item>
+        <item name="background">@drawable/shape_gradient_primary</item>
+    </style>
+
+    <style name="ToolbarTextAppearance">
+        <item name="android:textSize">@dimen/textBig</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorToolbarContentColor</item>
+    </style>
+
+    <!--单行文本-->
+    <style name="SingleLineText">
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">1</item>
+    </style>
+
+    <!--水平分割线-->
+    <style name="DividerH">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dividerWidth</item>
+        <item name="android:background">@color/colorDivider</item>
+    </style>
+
+    <!--垂直分割线-->
+    <style name="DividerV">
+        <item name="android:layout_width">@dimen/dividerWidth</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/colorDivider</item>
+    </style>
+
+    <style name="RoundButton">
+        <item name="android:background">@drawable/select_button</item>
+        <item name="android:textColor">@color/colorTextWhite</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/textHuge</item>
+    </style>
+
+    <style name="RoundButtonOutline">
+        <item name="android:background">@drawable/select_outline_button</item>
+        <item name="android:textColor">@color/select_focus_accent_week</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/textHuge</item>
+    </style>
+
+    <style name="BottomDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/colorTransparent</item>
+    </style>
+
+    <style name="BottomDialog.Animation">
+        <item name="android:windowEnterAnimation">@anim/translate_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/translate_dialog_out</item>
+    </style>
+</resources>

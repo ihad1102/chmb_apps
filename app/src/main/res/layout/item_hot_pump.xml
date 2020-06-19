@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.bakeMedicine.ui.timeStatus.heatPump.holder.HotPumpHolder" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTextWhite">
+
+        <TextView
+            android:id="@+id/textView124"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="机组状态:"
+            android:textColor="@color/colorTextWeek"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/textView129"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="开机"
+            android:textColor="@color/colorGreen"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintStart_toEndOf="@+id/textView124"
+            app:layout_constraintTop_toTopOf="@+id/textView124" />
+        <!--android:text="@{data.machineStatusObs,default=`machineStatusObs`}"-->
+
+        <TextView
+            android:id="@+id/textView133"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/shape_tobacco_green_dark_round_solid_2"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="压缩机1状态"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toStartOf="@+id/textView135"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView150" />
+
+        <TextView
+            android:id="@+id/textView135"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/shape_tobacco_green_dark_round_solid_2"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="压缩机2状态"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toStartOf="@+id/textView136"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView133"
+            app:layout_constraintTop_toTopOf="@+id/textView133" />
+
+        <TextView
+            android:id="@+id/textView136"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_tobacco_green_dark_round_solid_2"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="压缩机3状态"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView135"
+            app:layout_constraintTop_toTopOf="@+id/textView135" />
+
+        <View
+            android:id="@+id/textView137"
+            style="@style/DividerH"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView124" />
+
+        <TextView
+            android:id="@+id/textView139"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/shape_tobacco_grey_week_round_solid_2"
+            android:gravity="center"
+            android:text="运行"
+            android:textColor="@color/colorGreen"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toEndOf="@+id/textView133"
+            app:layout_constraintStart_toStartOf="@+id/textView133"
+            app:layout_constraintTop_toBottomOf="@+id/textView133" />
+        <!--android:text="@{data.currentRunningTimeObs,default=`1`}"-->
+        <TextView
+            android:id="@+id/textView140"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/shape_tobacco_grey_week_round_solid_2"
+            android:gravity="center"
+            android:text="待机"
+            android:textColor="@color/colorTextWeek"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toEndOf="@+id/textView135"
+            app:layout_constraintStart_toStartOf="@+id/textView135"
+            app:layout_constraintTop_toBottomOf="@+id/textView135" />
+        <!--android:text="@{data.totalTimeObs,default=`1`}"-->
+        <TextView
+            android:id="@+id/textView141"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/shape_tobacco_grey_week_round_solid_2"
+            android:gravity="center"
+            android:text="缓停"
+            android:textColor="@color/colorRedDark"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toEndOf="@+id/textView136"
+            app:layout_constraintStart_toStartOf="@+id/textView136"
+            app:layout_constraintTop_toBottomOf="@+id/textView136" />
+        <!--android:text="@{data.remainingTimeObs,default=`1`}"-->
+
+        <TextView
+            android:id="@+id/textView142"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_tobacco_green_dark_round_solid_2"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="烤房温度"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toStartOf="@+id/textView143"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView137" />
+
+        <TextView
+            android:id="@+id/textView143"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_tobacco_green_dark_round_solid_2"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="烤房湿度"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView142"
+            app:layout_constraintTop_toTopOf="@+id/textView142" />
+
+        <TextView
+            android:id="@+id/textView144"
+            android:layout_width="0dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/shape_tobacco_grey_week_round_solid_2"
+            android:gravity="center"
+            android:text="@{data.currentTempObs+`℃`,default=`23`}"
+            android:textColor="@color/colorGreen"
+            android:textSize="@dimen/textLarge"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/textView142"
+            app:layout_constraintStart_toStartOf="@+id/textView142"
+            app:layout_constraintTop_toBottomOf="@+id/textView142" />
+
+        <TextView
+            android:id="@+id/textView145"
+            android:layout_width="0dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/shape_tobacco_grey_week_round_solid_2"
+            android:gravity="center"
+            android:text="@{data.setTempObs+`℃`,default=`23`}"
+            android:textColor="@color/colorGreen"
+            android:textSize="@dimen/textLarge"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/textView143"
+            app:layout_constraintStart_toStartOf="@+id/textView143"
+            app:layout_constraintTop_toBottomOf="@+id/textView143" />
+
+        <TextView
+            android:id="@+id/textView146"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/shape_tobacco_green_dark_round_solid_2"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="环境温度"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toStartOf="@+id/textView147"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView144" />
+
+        <TextView
+            android:id="@+id/textView147"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_tobacco_green_dark_round_solid_2"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="超温温度"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView146"
+            app:layout_constraintTop_toBottomOf="@+id/textView145" />
+
+        <TextView
+            android:id="@+id/textView148"
+            android:layout_width="0dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/shape_tobacco_grey_week_round_solid_2"
+            android:gravity="center"
+            android:text="@{data.currentWetObs+`℃`,default=`23`}"
+            android:textColor="@color/colorGreen"
+            android:textSize="@dimen/textLarge"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/textView146"
+            app:layout_constraintStart_toStartOf="@+id/textView146"
+            app:layout_constraintTop_toBottomOf="@+id/textView146" />
+
+        <TextView
+            android:id="@+id/textView149"
+            android:layout_width="0dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/shape_tobacco_grey_week_round_solid_2"
+            android:gravity="center"
+            android:text="@{data.setWetObs+`℃`,default=`23`}"
+            android:textColor="@color/colorGreen"
+            android:textSize="@dimen/textLarge"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/textView147"
+            app:layout_constraintStart_toStartOf="@+id/textView147"
+            app:layout_constraintTop_toBottomOf="@+id/textView147" />
+
+        <View
+            android:id="@+id/textView150"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/colorPageBg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView148" />
+
+        <View
+            android:id="@+id/textView151"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/colorPageBg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView140" />
+
+        <com.zzwl.bakeMedicine.weidget.TimeView
+            android:id="@+id/timeView1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/timeView2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView151" />
+
+        <com.zzwl.bakeMedicine.weidget.TimeView
+            android:id="@+id/timeView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            app:layout_constraintEnd_toStartOf="@+id/timeView3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/timeView1"
+            app:layout_constraintTop_toTopOf="@+id/timeView1" />
+
+        <com.zzwl.bakeMedicine.weidget.TimeView
+            android:id="@+id/timeView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/timeView2"
+            app:layout_constraintTop_toTopOf="@+id/timeView2" />
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="1#压缩机运行时间"
+            android:textColor="@color/colorTextWeek"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintEnd_toEndOf="@+id/timeView1"
+            app:layout_constraintStart_toStartOf="@+id/timeView1"
+            app:layout_constraintTop_toBottomOf="@+id/timeView1" />
+
+        <TextView
+            android:id="@+id/textView125"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="2#压缩机运行时间"
+            android:textColor="@color/colorTextWeek"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintEnd_toEndOf="@+id/timeView2"
+            app:layout_constraintStart_toStartOf="@+id/timeView2"
+            app:layout_constraintTop_toTopOf="@+id/textView34" />
+
+        <TextView
+            android:id="@+id/textView126"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="2#压缩机运行时间"
+            android:textColor="@color/colorTextWeek"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintEnd_toEndOf="@+id/timeView3"
+            app:layout_constraintStart_toStartOf="@+id/timeView3"
+            app:layout_constraintTop_toTopOf="@+id/textView125" />
+
+        <TextView
+            android:id="@+id/textView128"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/colorPageBg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView125" />
+
+        <com.zzwl.bakeMedicine.weidget.ProgressRingView
+            android:id="@+id/progressRingView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:padding="16dp"
+            app:pr_text="25%"
+            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView128"
+            app:pr_bg_end_color="#E8EbE5"
+            app:pr_bg_mid_color="#E8EbE5"
+            app:pr_bg_start_color="#E8EbE5"
+            app:pr_progress="25"
+            app:pr_progress_end_color="@color/colorGreen"
+            app:pr_progress_start_color="@color/colorAccent"
+            app:pr_progress_width="8dp"
+            app:pr_show_anim="true" />
+
+        <com.zzwl.bakeMedicine.weidget.ProgressRingView
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:padding="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/button3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/progressRingView"
+            app:layout_constraintTop_toTopOf="@+id/progressRingView"
+            app:pr_bg_end_color="#E8EbE5"
+            app:pr_bg_mid_color="#E8EbE5"
+            app:pr_bg_start_color="#E8EbE5"
+            app:pr_progress="25"
+            app:pr_text="25%"
+            app:pr_progress_end_color="@color/colorGreen"
+            app:pr_progress_start_color="@color/colorAccent"
+            app:pr_progress_width="8dp"
+            app:pr_show_anim="true" />
+
+        <View
+            android:id="@+id/button3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button2"
+            app:layout_constraintTop_toTopOf="@+id/button2" />
+
+        <TextView
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1#电子膨胀阀开度"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/colorTextWeek"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintEnd_toEndOf="@+id/progressRingView"
+            app:layout_constraintStart_toStartOf="@+id/progressRingView"
+            app:layout_constraintTop_toBottomOf="@+id/progressRingView" />
+
+        <TextView
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2#电子膨胀阀开度"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/colorTextWeek"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintEnd_toEndOf="@+id/button2"
+            app:layout_constraintStart_toStartOf="@+id/button2"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

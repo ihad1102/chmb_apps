@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.farmingtrade.ui.supplier.holder.FarmingProductHolder" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constrainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="@{data::onClick}">
+
+        <ImageView
+            android:id="@+id/imgProduct"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="fitXY"
+            app:image="@{data.imgUrl}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:maxEms="10"
+            android:text="@{data.farmingProductItem.title , default=`title`}"
+            android:textColor="@color/colorTextWeekDark"
+            android:textSize="@dimen/textHuge"
+            app:layout_constraintStart_toEndOf="@+id/imgProduct"
+            app:layout_constraintTop_toTopOf="@+id/imgProduct" />
+
+        <TextView
+            android:id="@+id/tvSpecification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/farming_shape_farming_product_accent"
+            android:padding="2dp"
+            android:text="@{data.farmingProductItem.specification , default=`tvSpecification`}"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintStart_toStartOf="@+id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{data.unitObs , default=`tvPrice`}"
+            android:textColor="@color/colorMoney"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintStart_toStartOf="@+id/tvSpecification"
+            app:layout_constraintTop_toBottomOf="@+id/tvSpecification" />
+
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{data.farmingProductItem.address , default=`tvLocation`}"
+            android:textColor="@color/textColorWeek"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPrice"
+            app:layout_constraintEnd_toStartOf="@+id/tvTime"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvPrice"
+            app:layout_constraintTop_toTopOf="@+id/tvPrice" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@{data.updateTimeObs , default=`tvTime`}"
+            android:textColor="@color/textColorWeek"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintBottom_toBottomOf="@+id/tvLocation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvLocation" />
+
+        <View
+            android:id="@+id/textView152"
+            style="@style/DividerH"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:gravity="end"
+            android:maxLines="1"
+            android:maxEms="10"
+            android:textColor="@color/colorTextWeekDark"
+            android:textSize="@dimen/textNormal"
+        android:text="@{data.farmingProductItem.quantity+`公斤` , default=`tvAmount`}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tvTitle"
+            app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+
+
+        <TextView
+            android:id="@+id/tvSupplier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/textColorWeek"
+            android:textSize="@dimen/textNormal"
+        android:text="@{`供应商：`+data.farmingProductItem.userVo.realname , default=`tvSupplier`}"
+        app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvSpecification" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,22 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+
+android {
+    compileSdkVersion var.compileSdkVersion
+    defaultConfig {
+        versionCode var.versionCode
+        versionName var.versionName
+        minSdkVersion var.minSdkVersion
+        targetSdkVersion var.targetSdkVersion
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+dependencies {
+    implementation 'com.pnikosis:materialish-progress:1.7'
+}

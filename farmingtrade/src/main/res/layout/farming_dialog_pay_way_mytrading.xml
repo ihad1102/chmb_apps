@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.farmingtrade.ui.myTrading.MyTradingFragment" />
+    </data>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constrainLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="24dp">
+
+
+        <TextView
+            android:id="@+id/textView95"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:layout_marginTop="16dp"
+            android:text="选择支付途径"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView96"
+            style="@style/DividerH"
+            android:layout_marginEnd="64dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView95" />
+
+        <LinearLayout
+            android:id="@+id/payGroup"
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView96">
+
+            <LinearLayout
+                android:id="@+id/llAliPay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical"
+                android:onClick="@{data::onPayWaySelectChangeEvent}"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/farming_ic_check_circle_black_24dp"
+                    app:backgroundTint="@{data.checkedPayWay == 0 ? @color/colorAccent : @color/colorTextDarkWeek }" />
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="16dp"
+                    android:scaleType="fitXY"
+                    android:background="@drawable/farming_ic_alipay"
+                    app:backgroundTint="@{data.checkedPayWay == 0 ? @color/colorALiPay : @color/colorTextDarkWeek }"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@{data.checkedPayWay == 0 ? @color/colorALiPay : @color/colorTextDarkWeek }"
+                    android:text="支付宝"
+                    android:textSize="@dimen/textBig" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llWechat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical"
+                android:onClick="@{data::onPayWaySelectChangeEvent}"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/farming_ic_check_circle_black_24dp"
+                    app:backgroundTint="@{data.checkedPayWay == 1 ? @color/colorAccent : @color/colorTextDarkWeek }" />
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="16dp"
+                    app:backgroundTint="@{data.checkedPayWay == 1 ? @color/colorWX : @color/colorTextDarkWeek }"
+                    android:background="@drawable/farming_ic_wechat" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@{data.checkedPayWay == 1 ? @color/colorWX : @color/colorTextDarkWeek }"
+                    android:text="微信"
+                    android:textSize="@dimen/textBig" />
+            </LinearLayout>
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/llVisa"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="5dp"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:onClick="@{data::onPayWaySelectChangeEvent}"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<View-->
+                    <!--android:layout_width="24dp"-->
+                    <!--android:layout_height="24dp"-->
+                    <!--android:background="@drawable/ic_check_circle_black_24dp"-->
+                    <!--app:backgroundTint="@{data.checkedPayWay == 2 ? @color/colorAccent : @color/colorTextDarkWeek }" />-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="44dp"-->
+                    <!--android:layout_height="44dp"-->
+                    <!--android:layout_marginStart="16dp"-->
+                    <!--android:src="@drawable/ic_visa" />-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+
+                    <!--android:text="银联"-->
+                    <!--android:textSize="@dimen/textBig" />-->
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/llGoodsFirst"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="5dp"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:onClick="@{data::onPayWaySelectChangeEvent}"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<View-->
+                    <!--android:layout_width="24dp"-->
+                    <!--android:layout_height="24dp"-->
+                    <!--android:background="@drawable/ic_check_circle_black_24dp"-->
+                    <!--app:backgroundTint="@{data.checkedPayWay == 3 ? @color/colorAccent : @color/colorTextDarkWeek }" />-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="44dp"-->
+                    <!--android:layout_height="44dp"-->
+                    <!--android:layout_marginStart="16dp"-->
+                    <!--android:src="@drawable/ic_goodfirst" />-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="货到付款"-->
+                    <!--android:textSize="@dimen/textBig" />-->
+            <!--</LinearLayout>-->
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+
+
+</layout>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.bakeMedicine.ui.warningHistory.WarningHistoryActivity" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTextWhite">
+
+        <EditText
+            android:id="@+id/edtSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_tobacco_gray_round_solid_2_search"
+            android:hint="请输入告警名称/告警级别搜索..."
+            android:imeOptions="actionSearch"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp"
+            android:singleLine="true"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintEnd_toStartOf="@+id/textView11"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgTobaccoList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_pull"
+            app:layout_constraintBottom_toBottomOf="@+id/textView11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView11"
+            app:layout_constraintTop_toTopOf="@+id/textView11" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
+            android:ellipsize="end"
+            android:gravity="end|center_vertical"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:singleLine="true"
+            android:text="@{data.selectedNameObs+` `,default=`selectedNameObs`}"
+            android:textColor="@color/colorGreenDark"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="@+id/edtSearch"
+            app:layout_constraintEnd_toStartOf="@+id/imgTobaccoList"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/edtSearch"
+            app:layout_constraintTop_toTopOf="@+id/edtSearch" />
+
+        <TextView
+            android:id="@+id/textView50"
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPageBg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtSearch" />
+
+        <TextView
+            android:id="@+id/tvHistory"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="16dp"
+            android:background="@{data.selectedTypeObs == 1 ? @drawable/shape_half_round_right_green_4 : @drawable/shape_half_round_right_green_stroke_4}"
+            android:gravity="center"
+            android:text="历史告警"
+            android:textColor="@{data.selectedTypeObs == 1 ? @color/colorTextWhite : @color/colorGreen}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvCurrent"
+            app:layout_constraintTop_toTopOf="@+id/tvCurrent" />
+
+
+        <TextView
+            android:id="@+id/tvCurrent"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@{data.selectedTypeObs == 0 ? @drawable/shape_half_round_left_green_4 : @drawable/shape_half_round_left_green_stroke_4}"
+            android:gravity="center"
+            android:text="当前告警"
+            android:textColor="@{data.selectedTypeObs == 0 ? @color/colorTextWhite : @color/colorGreen}"
+            app:layout_constraintEnd_toStartOf="@+id/tvHistory"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView50" />
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCurrent">
+
+        </FrameLayout>
+
+        <View
+            android:id="@+id/viewClick"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorTransparent"
+            app:layout_constraintBottom_toBottomOf="@+id/textView11"
+            app:layout_constraintEnd_toEndOf="@+id/imgTobaccoList"
+            app:layout_constraintStart_toStartOf="@+id/textView11"
+            app:layout_constraintTop_toTopOf="@+id/textView11" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

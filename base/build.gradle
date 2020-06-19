@@ -1,0 +1,61 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion var.compileSdkVersion
+    defaultConfig {
+        versionCode var.versionCode
+        versionName var.versionName
+        minSdkVersion var.minSdkVersion
+        targetSdkVersion var.targetSdkVersion
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+kapt {
+    arguments {
+        arg("moduleName", project.getName())
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':sweet-dialog')
+    implementation var.appcompatV7
+    implementation var.recyclerviewV7
+    implementation var.constraintLayout
+    implementation var.kotlin
+    implementation var.logger
+    implementation var.lifecycles
+    implementation var.lifecyclesRxSteams
+    kapt var.lifecyclesProcessor
+    implementation var.room
+    kapt var.roomProcessor
+    debugImplementation var.leakcanaryDebug
+    releaseImplementation var.leakcanaryRelease
+    implementation var.glide
+    implementation var.gson
+    implementation var.rxjava
+    implementation var.rxandroid
+    implementation var.retrofit
+    implementation var.okLog
+    implementation var.retrofitRxjava
+    implementation var.rxPermission
+    implementation var.eventbus
+    implementation var.arouterApi
+    kapt var.arouteProcessor
+    implementation var.vLayout
+    implementation var.divideritemdecoration
+    implementation(var.takePhoto) {
+        exclude group: 'io.reactivex'
+    }
+}

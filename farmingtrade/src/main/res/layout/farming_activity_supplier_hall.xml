@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.farmingtrade.ui.supplier.SupplierHallActivity" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/colorAccent"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/ic_arrow_back_toolbar_24dp" />
+
+            <RelativeLayout
+                android:id="@+id/rlSearch"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/farming_shape_rounded_rectangle_white_6dp">
+
+                <TextView
+                    android:id="@+id/tvSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="8dp"
+                    android:text="请输入要搜索的内容"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/textColorWeek"
+                    android:textSize="@dimen/textNormal" />
+
+                <ImageView
+                    android:id="@+id/imSearch"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/tvSearch"
+                    android:background="@drawable/farming_ic_trade_search_white_24dp"
+                    app:backgroundTint="@color/textColorWeek" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/imgOrder"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/farming_ic_trade_record" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="分类"
+            android:textSize="@dimen/textBig"
+            android:textColor="@{data.categorySelectedObs ? @color/colorAccent : @color/textColorWeek}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toStartOf="@+id/tvAmount"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorYellow"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/tvCategory"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/farming_ic_sort_desc"
+            app:backgroundTint="@{data.categorySelectedObs ? @color/colorAccent : @color/textColorWeek}"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="数量"
+            android:textColor="@{data.amountSelectedObs ? @color/colorAccent : @color/textColorWeek}"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toStartOf="@+id/tvPrice"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvCategory"
+            app:layout_constraintTop_toTopOf="@+id/tvCategory" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="价格"
+            android:textColor="@{data.priceSelectedObs ? @color/colorAccent : @color/textColorWeek}"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvAmount"
+            app:layout_constraintTop_toTopOf="@+id/tvAmount" />
+
+        <ImageView
+            android:id="@+id/imgAmountAscend"
+            android:layout_width="10dp"
+            android:layout_height="9dp"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/farming_ic_sort_asc"
+            app:backgroundTint="@{data.amountAscSelectedObs ? @color/colorAccent : @color/textColorWeek}"
+            app:layout_constraintStart_toEndOf="@+id/tvAmount"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+        <ImageView
+            android:id="@+id/imgAmountDescend"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/farming_ic_sort_desc"
+            app:backgroundTint="@{data.amountDescSelectedObs ? @color/colorAccent : @color/textColorWeek}"
+            app:layout_constraintStart_toStartOf="@+id/imgAmountAscend"
+            app:layout_constraintTop_toBottomOf="@+id/imgAmountAscend" />
+
+        <ImageView
+            android:id="@+id/imgPriceAscend"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/farming_ic_sort_asc"
+            app:backgroundTint="@{data.priceAscSelectedObs ? @color/colorAccent : @color/textColorWeek}"
+            app:layout_constraintStart_toEndOf="@+id/tvPrice"
+            app:layout_constraintTop_toTopOf="@+id/imgAmountAscend" />
+
+        <ImageView
+            android:id="@+id/imgPriceDescend"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/farming_ic_sort_desc"
+            app:backgroundTint="@{data.priceDescSelectedObs ? @color/colorAccent : @color/textColorWeek}"
+            app:layout_constraintStart_toStartOf="@+id/imgPriceAscend"
+            app:layout_constraintTop_toBottomOf="@+id/imgPriceAscend" />
+
+        <View
+            android:id="@+id/view5"
+            style="@style/DividerH"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCategory" />
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view5">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/farming_ic_buy"
+            app:backgroundTint="@{@color/colorAccent}"
+            app:borderWidth="0dp"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:pressedTranslationZ="9dp" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,40 @@
+<resources>
+
+    <style name="AppWelcome" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/ic_login</item>
+        <item name="android:statusBarColor">@color/colorTransparent</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+    </style>
+    <!--弹窗动画-->
+    <style name="PopupWindow">
+        <item name="android:windowEnterAnimation">@anim/window_in</item>
+        <item name="android:windowExitAnimation">@anim/window_out</item>
+    </style>
+    <declare-styleable name="ProgressRing">
+        <!--进度起始色-->
+        <attr name="pr_progress_start_color" format="color" />
+        <!--进度结束色-->
+        <attr name="pr_progress_end_color" format="color" />
+        <!--背景起始色-->
+        <attr name="pr_bg_start_color" format="color" />
+        <!--背景中间色-->
+        <attr name="pr_bg_mid_color" format="color" />
+        <!--背景结束色-->
+        <attr name="pr_bg_end_color" format="color" />
+        <!--进度值 介于0-100-->
+        <attr name="pr_progress" format="integer" />
+        <!--进度宽度-->
+        <attr name="pr_progress_width" format="dimension" />
+        <!--起始角度-->
+        <attr name="pr_start_angle" format="integer" />
+        <!--扫过的角度-->
+        <attr name="pr_sweep_angle" format="integer" />
+        <!--是否显示动画-->
+        <attr name="pr_show_anim" format="boolean" />
+        <!--文本-->
+        <attr name="pr_text" format="string" />
+    </declare-styleable>
+
+
+</resources>

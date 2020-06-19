@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.farmingtrade.ui.myTrading.holder.MyPurchaseHolder" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constrainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:onClick="@{data::onClick}">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@{data.myPurchaseItem.title,default=`tvTitle`}"
+            android:textColor="@color/colorTextDark"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView187"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="采购数量:"
+            android:textColor="@color/colorTextDarkWeek"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@{data.myPurchaseItem.quantity,default=`tvAmount`}"
+            android:textColor="@color/colorTextDarkWeek"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintStart_toEndOf="@+id/textView187"
+            app:layout_constraintTop_toTopOf="@+id/textView187" />
+
+        <TextView
+            android:id="@+id/textView195"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:text="采购价格:"
+            android:textColor="@color/colorTextDarkWeek"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView187"
+            app:layout_constraintTop_toBottomOf="@+id/textView187" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@{data.myPurchaseItem.price ,default=`tvPrice`}"
+            android:textColor="@color/colorMoney"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintStart_toEndOf="@+id/textView195"
+            app:layout_constraintTop_toTopOf="@+id/textView195" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{data.tempStatusObs ? `采购中` : `已下架`,default=`tvStatus`}"
+            android:textColor="@color/colorTextDarkWeek"
+            android:textSize="@dimen/textSmall"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvBtn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/farming_shape_wiki_agr_dark"
+            android:onClick="@{data::onClick}"
+            android:paddingStart="12dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="2dp"
+            android:text="@{data.tempStatusObs ? `下架`:`上架`}"
+            android:textColor="@color/textColorWeek"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvPrice" />
+
+        <TextView
+            android:id="@+id/tvBtn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/farming_shape_wiki_agr_dark"
+            android:onClick="@{data::onClick}"
+            android:paddingStart="12dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="2dp"
+            android:text="编辑"
+            android:textColor="@color/textColorWeek"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintEnd_toStartOf="@+id/tvBtn1"
+            app:layout_constraintTop_toTopOf="@+id/tvBtn1" />
+
+        <TextView
+            android:id="@+id/tvBtn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/farming_shape_wiki_agr_dark"
+            android:onClick="@{data::onClick}"
+            android:paddingStart="12dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="2dp"
+            android:text="删除"
+            android:textColor="@color/textColorWeek"
+            android:textSize="@dimen/textNormal"
+            android:visibility="@{!data.tempStatusObs}"
+            app:layout_constraintEnd_toStartOf="@+id/tvBtn2"
+            app:layout_constraintTop_toTopOf="@+id/tvBtn1" />
+
+        <TextView
+            android:id="@+id/textView210"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="元/公斤"
+            android:textColor="@color/colorTextDarkWeek"
+            android:textSize="@dimen/textNormal"
+            android:visibility="@{data.isShowUnit}"
+            app:layout_constraintStart_toEndOf="@+id/tvPrice"
+            app:layout_constraintTop_toTopOf="@+id/tvPrice" />
+
+        <TextView
+            android:id="@+id/textView189"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="公斤"
+            android:textColor="@color/colorTextDarkWeek"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAmount"
+            app:layout_constraintStart_toEndOf="@+id/tvAmount"
+            app:layout_constraintTop_toTopOf="@+id/tvAmount" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

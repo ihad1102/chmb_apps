@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.farmingtrade.ui.search.holder.TagHolder" />
+    </data>
+
+    <TextView
+        android:id="@+id/tvTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/farming_shape_rounded_rectangle_gray_4dp"
+        android:gravity="center_horizontal"
+        android:padding="4dp"
+        android:maxEms="4"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:onClick="@{data::onClick}"
+        android:text="@{data.tag ,default=`ceshi`}"
+        android:textColor="@color/colorTextWeekDark"
+        android:textSize="@dimen/textBig" />
+</layout>

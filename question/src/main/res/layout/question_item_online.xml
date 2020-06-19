@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.question.ui.question.holder.OnlineHolder" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTextWhite">
+
+        <View
+            android:id="@+id/textView101"
+            android:layout_width="3dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView118"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="在线问答"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/textHuge"
+            app:layout_constraintStart_toEndOf="@+id/textView101"
+            app:layout_constraintTop_toTopOf="@+id/textView101" />
+
+        <LinearLayout
+            android:id="@+id/llFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{data::onClick}"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/textView118"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView118">
+
+            <ImageView
+                android:id="@+id/imgFilter"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="8dp"
+                app:srcCompat="@drawable/question_ic_filtrate" />
+
+            <TextView
+                android:id="@+id/tvFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:text="@{data.filterObs}"
+                android:textColor="@color/colorTextDarkWeek"
+                android:textSize="@dimen/textBig" />
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

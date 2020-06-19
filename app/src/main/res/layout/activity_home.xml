@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <com.zzwl.bakeMedicine.weidget.DisScrollViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="48dp" />
+
+        <View
+            android:id="@+id/divider"
+            style="@style/DividerH"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="48dp" />
+
+        <com.ogaclejapan.smarttablayout.SmartTabLayout
+            android:id="@+id/smartTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="bottom"
+            android:background="@color/colorTabBg"
+            app:stl_clickable="false"
+            app:stl_distributeEvenly="true"
+            app:stl_dividerThickness="0dp"
+            app:stl_indicatorColor="@color/colorTransparent"
+            app:stl_indicatorThickness="0dp"
+            app:stl_underlineThickness="0dp" />
+    </FrameLayout>
+
+</layout>

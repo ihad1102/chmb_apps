@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_popwindow_tobacco_list"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/tvTobaccoInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tvDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="查看详情"
+            android:paddingBottom="16dp"
+            android:paddingEnd="16dp"
+            android:textSize="@dimen/textBig"
+            android:textColor="@color/colorGreen" />
+    </LinearLayout>
+</layout>

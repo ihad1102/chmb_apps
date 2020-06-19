@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.im.ui.list.bind.ChatBind" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple_item_background"
+        android:onClick="@{data::onClick}"
+        android:onLongClick="@{data::onLongClick}">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="centerCrop"
+            app:error="@{data.placeholder}"
+            app:image="@{data.headerImage}"
+            app:imageCircle="@{true}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:placeholder="@{data.placeholder}" />
+
+
+        <TextView
+            android:id="@+id/target"
+            android:layout_width="248dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@{data.title}"
+            android:textColor="@color/colorTextDark"
+            android:textSize="@dimen/textBig"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+            tools:text="XXX" />
+
+        <TextView
+            android:id="@+id/lastMessage"
+            style="@style/SingleLineText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@{data.lastMessage}"
+            android:textColor="@color/colorTextDarkWeek"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="@+id/target"
+            app:layout_constraintStart_toStartOf="@+id/target"
+            tools:text="nihao" />
+
+        <TextView
+            android:id="@+id/lastTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@{data.lastTime}"
+            android:textColor="@color/colorTextDarkWeek"
+            android:textSize="@dimen/textSmall"
+            app:layout_constraintBottom_toTopOf="@+id/unRead"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="15:26" />
+
+        <TextView
+            android:id="@+id/unRead"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_ovl"
+            android:gravity="center"
+            android:text="@{data.unread}"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="@dimen/textTiny"
+            android:textStyle="bold"
+            android:visibility="@{data.unread != `` }"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lastTime" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

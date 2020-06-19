@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.question.ui.expert.ExpertInformationActivity" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/blurBackground"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:scaleX="2"
+            android:scaleY="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/headerImage"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="72dp"
+            android:scaleType="centerCrop"
+            app:image="@{data.headerImage}"
+            app:imageCircle="@{true}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/userName"
+            style="@style/SingleLineText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="64dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@{data.expectInfoData.userName}"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="@dimen/textHuge"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headerImage"
+            tools:text="美男子秦浩南" />
+
+        <TextView
+            android:id="@+id/intro"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="64dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@{data.expectInfoData.intro}"
+            android:textColor="@color/colorTextWhiteWeek"
+            android:maxLines="6"
+            android:ellipsize="end"
+            android:textSize="@dimen/textSmall"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userName"
+            tools:text="专家的介绍" />
+
+
+        <TextView
+            android:id="@+id/type"
+            style="@style/SingleLineText"
+            android:layout_width="0dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="64dp"
+            android:gravity="center"
+            android:text="@{data.expectInfoData.career}"
+            android:textColor="@color/colorTextWhiteWeek"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/intro"
+            tools:text="农业植保专家" />
+
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/fans"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:orientation="vertical"-->
+            <!--android:padding="16dp"-->
+            <!---->
+            <!--app:layout_constraintEnd_toStartOf="@+id/accept"-->
+            <!--app:layout_constraintHorizontal_bias="0.5"-->
+            <!--app:layout_constraintHorizontal_chainStyle="spread"-->
+            <!--app:layout_constraintStart_toEndOf="@+id/blurBackground"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="@+id/accept">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="粉丝"-->
+                <!--android:textColor="@color/colorTextWhite"-->
+                <!--android:textSize="@dimen/textNormal" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:text="@{data.expectInfoData.fansCount}"-->
+                <!--android:textColor="@color/colorTextWhite"-->
+                <!--android:textSize="@dimen/textNormal"-->
+                <!--android:textStyle="bold"-->
+                <!--tools:text="898" />-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/accept"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="16dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:gravity="center"-->
+            <!--android:orientation="vertical"-->
+            <!--android:padding="16dp"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintEnd_toStartOf="@+id/score"-->
+            <!--app:layout_constraintHorizontal_bias="0.5"-->
+            <!--app:layout_constraintStart_toEndOf="@+id/fans"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/type">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="被采纳数"-->
+                <!--android:textColor="@color/colorTextWhite"-->
+                <!--android:textSize="@dimen/textNormal" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:text="@{data.expectInfoData.adoptCount}"-->
+                <!--android:textColor="@color/colorTextWhite"-->
+                <!--android:textSize="@dimen/textNormal"-->
+                <!--android:textStyle="bold"-->
+                <!--tools:text="898" />-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/score"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="71dp"-->
+            <!--android:gravity="center"-->
+            <!--android:orientation="vertical"-->
+            <!--android:padding="16dp"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintHorizontal_bias="0.5"-->
+            <!--app:layout_constraintStart_toEndOf="@+id/accept"-->
+            <!--app:layout_constraintTop_toTopOf="@+id/accept">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="评分(★)"-->
+                <!--android:textColor="@color/colorTextWhite"-->
+                <!--android:textSize="@dimen/textNormal" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:text="@{data.expectInfoData.avg}"-->
+                <!--android:textColor="@color/colorTextWhite"-->
+                <!--android:textSize="@dimen/textNormal"-->
+                <!--android:textStyle="bold"-->
+                <!--tools:text="4.5" />-->
+        <!--</LinearLayout>-->
+
+        <TextView
+            android:id="@+id/imgPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="视频通话"
+            android:textSize="@dimen/textNormal"
+            android:visibility="gone"
+            android:textColor="@color/colorTextWhite"
+            app:layout_constraintBottom_toBottomOf="@+id/userName"
+            app:layout_constraintStart_toEndOf="@+id/userName"
+            app:layout_constraintTop_toTopOf="@+id/userName"
+            app:srcCompat="@drawable/ic_qrcode" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

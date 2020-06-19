@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/tvReply"
+        android:paddingTop="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textSize="@dimen/textBig"
+        android:textColor="@color/colorBlack"
+        android:layout_width="match_parent"
+        android:gravity="start"
+        android:background="@null"
+        android:layout_height="match_parent"
+        android:hint="请输入您要回复的内容"/>
+    </FrameLayout>
+</layout>

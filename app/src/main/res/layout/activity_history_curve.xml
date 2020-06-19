@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.bakeMedicine.ui.timeStatus.HistoryCurveActivity" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGreenWeek">
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/line_chart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView43" />
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/ic_arrow_back_toolbar_24dp"
+            app:backgroundTint="@{@color/colorGreenDark}"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDateFrom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvDateFrom" />
+
+        <TextView
+            android:id="@+id/tvDateFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/shape_tobacco_green_dark_round_2"
+            android:paddingStart="6dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="6dp"
+            android:paddingBottom="2dp"
+            android:text="@{data.dateFromObs,default=`dateFromObs`}"
+            android:textColor="@color/colorTextDarkWeek"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintBottom_toBottomOf="@+id/textView47"
+            app:layout_constraintEnd_toStartOf="@+id/textView49"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/imgBack"
+            app:layout_constraintTop_toTopOf="@+id/textView114" />
+
+        <TextView
+            android:id="@+id/textView42"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:text="干球温度"
+            android:textColor="@color/colorChartRedDark"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView43"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="湿球温度"
+            android:textSize="@dimen/textBig"
+            android:textColor="@color/colorChartCyan"
+            app:layout_constraintEnd_toEndOf="@+id/textView42"
+            app:layout_constraintTop_toBottomOf="@+id/textView42" />
+
+        <TextView
+            android:id="@+id/textView114"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="设定干球目标温度"
+            android:textColor="@color/colorChartRed"
+            app:layout_constraintBottom_toBottomOf="@+id/textView42"
+            app:layout_constraintEnd_toStartOf="@+id/textView46"
+            app:layout_constraintTop_toTopOf="@+id/textView42" />
+
+        <View
+            android:id="@+id/textView45"
+            android:layout_width="24dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/colorChartCyan"
+            app:layout_constraintBottom_toBottomOf="@+id/textView43"
+            app:layout_constraintEnd_toStartOf="@+id/textView43"
+            app:layout_constraintTop_toTopOf="@+id/textView43" />
+
+        <View
+            android:id="@+id/textView46"
+            android:layout_width="24dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/colorChartRedDark"
+            app:layout_constraintBottom_toBottomOf="@+id/textView42"
+            app:layout_constraintEnd_toStartOf="@+id/textView42"
+            app:layout_constraintTop_toTopOf="@+id/textView42" />
+
+        <TextView
+            android:id="@+id/textView47"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="设定湿球目标温度"
+            android:textColor="@color/colorChartSkyBlue"
+            app:layout_constraintBottom_toBottomOf="@+id/textView45"
+            app:layout_constraintEnd_toStartOf="@+id/textView45"
+            app:layout_constraintTop_toTopOf="@+id/textView45" />
+
+        <View
+            android:id="@+id/textView48"
+            android:layout_width="24dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/colorChartSkyBlue"
+            app:layout_constraintBottom_toBottomOf="@+id/textView47"
+            app:layout_constraintEnd_toStartOf="@+id/textView47"
+            app:layout_constraintTop_toTopOf="@+id/textView47" />
+
+        <View
+            android:id="@+id/textView49"
+            android:layout_width="24dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/colorChartRed"
+            app:layout_constraintBottom_toBottomOf="@+id/textView114"
+            app:layout_constraintEnd_toStartOf="@+id/textView114"
+            app:layout_constraintTop_toTopOf="@+id/textView114" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

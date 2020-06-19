@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.farmingtrade.ui.SwitchStatusActivity" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTextWhite">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/imageView26"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="56dp"
+                android:layout_marginEnd="80dp"
+                android:src="@{data.imgObs}"
+                app:layout_constraintDimensionRatio="w,1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView213"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="@{data.currentStatusObs,default=`currentStatusObs`}"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/textLarge"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/imageView26"
+                app:layout_constraintStart_toStartOf="@+id/imageView26"
+                app:layout_constraintTop_toBottomOf="@+id/imageView26" />
+
+            <TextView
+                android:id="@+id/tvSwitchStatus"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/farming_shape_tobacco_green_round_solid_2"
+                android:gravity="center"
+                android:text="@{data.switchStatusObs,default=`switchStatusObs`}"
+                android:textColor="@color/colorTextWhite"
+                android:textSize="@dimen/textHuge"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView213" />
+
+            <TextView
+                android:id="@+id/tvBack"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/farming_shape_tobacco_green_round_2"
+                android:gravity="center"
+                android:text="返回"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/textHuge"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSwitchStatus" />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</layout>

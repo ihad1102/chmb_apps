@@ -1,0 +1,7 @@
+<resources>
+    <!-- Request permission start -->
+    <string name="rationale_record_voice">需要通过麦克风录制音频</string>
+    <string name="rationale_photo">需要访问您的照片</string>
+    <string name="rationale_camera">需要访问您的摄像头</string>
+    <!-- Request permission end -->
+</resources>

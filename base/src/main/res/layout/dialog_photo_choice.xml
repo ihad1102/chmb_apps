@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorItemBackground"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/gallery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_item_background"
+            android:clickable="true"
+            android:drawableLeft="@drawable/ic_photo_black_24dp"
+            android:drawablePadding="16dp"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:text="从相册选择"
+            android:textColor="@color/colorTextDark"
+            android:textSize="@dimen/textBig"
+            app:drawableTint="@{@color/colorTextDarkWeek}" />
+
+        <View style="@style/DividerH" />
+
+        <TextView
+            android:id="@+id/camera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_item_background"
+            android:clickable="true"
+            android:drawablePadding="16dp"
+            android:drawableStart="@drawable/ic_photo_camera_black_24dp"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:text="从相机拍摄"
+            android:textColor="@color/colorTextDark"
+            android:textSize="@dimen/textBig"
+            app:drawableTint="@{@color/colorTextDarkWeek}" />
+
+        <View style="@style/DividerH" />
+
+
+        <TextView
+            android:id="@+id/close"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_item_background"
+            android:clickable="true"
+            android:drawablePadding="16dp"
+            android:drawableStart="@drawable/ic_close_black_24dp"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:text="取消"
+            android:textColor="@color/colorTextDark"
+            android:textSize="@dimen/textBig"
+            app:drawableTint="@{@color/colorTextDarkWeek}" />
+    </LinearLayout>
+</layout>

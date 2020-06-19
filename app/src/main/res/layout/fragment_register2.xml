@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.bakeMedicine.ui.user.Register2Fragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_tobacco_white_round_solid_6">
+
+
+            <ImageView
+                android:id="@+id/imgIdFace"
+                android:layout_width="150dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:onClick="@{data::onImgClick}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@color/colorImage" />
+
+            <ImageView
+                android:id="@+id/imgIdBack"
+                android:layout_width="150dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="8dp"
+                android:onClick="@{data::onImgClick}"
+                app:layout_constraintEnd_toEndOf="@+id/imgIdFace"
+                app:layout_constraintStart_toStartOf="@+id/imgIdFace"
+                app:layout_constraintTop_toBottomOf="@+id/textView78"
+                app:srcCompat="@color/colorImage" />
+
+            <ImageView
+                android:id="@+id/imgIdHand"
+                android:layout_width="150dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="8dp"
+                android:onClick="@{data::onImgClick}"
+                app:layout_constraintEnd_toEndOf="@+id/imgIdBack"
+                app:layout_constraintStart_toStartOf="@+id/imgIdBack"
+                app:layout_constraintTop_toBottomOf="@+id/textView79"
+                app:srcCompat="@color/colorImage" />
+
+            <TextView
+                android:id="@+id/textView78"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="添加身份证正面照片"
+                android:textColor="@color/colorTextWeek"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintEnd_toEndOf="@+id/imgIdFace"
+                app:layout_constraintStart_toStartOf="@+id/imgIdFace"
+                app:layout_constraintTop_toBottomOf="@+id/imgIdFace" />
+
+            <TextView
+                android:id="@+id/textView79"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="添加身份证反面照片"
+                android:textColor="@color/colorTextWeek"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintEnd_toEndOf="@+id/imgIdBack"
+                app:layout_constraintStart_toStartOf="@+id/imgIdBack"
+                app:layout_constraintTop_toBottomOf="@+id/imgIdBack" />
+
+            <TextView
+                android:id="@+id/textView80"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="添加手持身份证"
+                android:textColor="@color/colorTextWeek"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintEnd_toEndOf="@+id/imgIdHand"
+                app:layout_constraintStart_toStartOf="@+id/imgIdHand"
+                app:layout_constraintTop_toBottomOf="@+id/imgIdHand" />
+
+            <EditText
+                android:id="@+id/edtIdNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="68dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="68dp"
+                android:digits="0123456789xX"
+                android:hint="输入身份证号码"
+                android:maxLength="18"
+                android:text="@={data.idCardNumberObs}"
+                android:textColor="@color/colorTextWeek"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView80" />
+
+            <EditText
+                android:id="@+id/edtReallyName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="68dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="68dp"
+                android:hint="输入真实姓名"
+                android:text="@={data.reallyNameObs}"
+                android:textColor="@color/colorTextWeek"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtIdNumber" />
+
+            <TextView
+                android:id="@+id/tvLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/selector_green_dark_32dp"
+                android:paddingStart="30dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="6dp"
+                android:text="登录"
+                android:textColor="@color/colorTextWhite"
+                android:enabled="@{data.registerEnableObs}"
+                android:textSize="@dimen/textBig"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtReallyName" />
+
+            <ImageView
+                android:id="@+id/imgFaceAdd"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:onClick="@{data::onImgClick}"
+                app:layout_constraintBottom_toBottomOf="@+id/imgIdFace"
+                app:layout_constraintEnd_toEndOf="@+id/imgIdFace"
+                app:layout_constraintStart_toStartOf="@+id/imgIdFace"
+                app:layout_constraintTop_toTopOf="@+id/imgIdFace"
+                app:srcCompat="@drawable/ic_add_id_card" />
+
+            <ImageView
+                android:id="@+id/imgBackAdd"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:onClick="@{data::onImgClick}"
+                app:layout_constraintBottom_toBottomOf="@+id/imgIdBack"
+                app:layout_constraintEnd_toEndOf="@+id/imgIdBack"
+                app:layout_constraintStart_toStartOf="@+id/imgIdBack"
+                app:layout_constraintTop_toTopOf="@+id/imgIdBack"
+                app:srcCompat="@drawable/ic_add_id_card" />
+
+            <ImageView
+                android:id="@+id/imgHandAdd"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:onClick="@{data::onImgClick}"
+                app:layout_constraintBottom_toBottomOf="@+id/imgIdHand"
+                app:layout_constraintEnd_toEndOf="@+id/imgIdHand"
+                app:layout_constraintStart_toStartOf="@+id/imgIdHand"
+                app:layout_constraintTop_toTopOf="@+id/imgIdHand"
+                app:srcCompat="@drawable/ic_add_id_card" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</layout>

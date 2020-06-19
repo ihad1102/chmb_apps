@@ -1,0 +1,74 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion var.compileSdkVersion
+    defaultConfig {
+        versionCode var.versionCode
+        versionName var.versionName
+        minSdkVersion var.minSdkVersion
+        targetSdkVersion var.targetSdkVersion
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+kapt {
+    arguments {
+        arg("moduleName", project.getName())
+        arg("eventBusIndex", "com.im.MyEventBusIndex")
+    }
+}
+
+dependencies {
+    implementation project(':base')
+    implementation project(':sweet-dialog')
+    implementation var.appcompatV7
+    implementation var.design
+    implementation var.recyclerviewV7
+    implementation var.constraintLayout
+    implementation var.cardLayout
+    implementation var.kotlin
+    implementation var.logger
+    implementation var.lifecycles
+    implementation var.lifecyclesRxSteams
+    kapt var.lifecyclesProcessor
+    implementation var.room
+    kapt var.roomProcessor
+    implementation var.retrofit
+    implementation var.rxandroid
+    implementation var.rxjava
+    implementation var.retrofitRxjava
+    implementation var.gson
+    implementation var.rxPermission
+    implementation var.eventbus
+    implementation var.arouterApi
+    kapt var.arouteProcessor
+    implementation var.vLayout
+    implementation var.eventbus
+    kapt var.eventbusProcessor
+    implementation var.glide
+    //权限
+    implementation 'pub.devrel:easypermissions:0.4.0'
+    //极光UI组件
+    implementation 'cn.jiguang.imui:chatinput:0.7.3'
+    implementation 'cn.jiguang.imui:messagelist:0.7.2'
+    //极光
+    implementation var.jpush
+    implementation var.jmessage
+    implementation var.jcore
+}
+
+repositories {
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+    google()
+    jcenter()
+}

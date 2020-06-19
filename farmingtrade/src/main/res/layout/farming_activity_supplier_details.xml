@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.farmingtrade.ui.supplier.SupplierDetailsActivity" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="52dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constrainLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintDimensionRatio="1.5:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@{data.supplierEntity.title,default=`tvTitle`}"
+                    android:textColor="@color/colorTextDark"
+                    android:textSize="@dimen/textBig"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/viewPager" />
+
+                <TextView
+                    android:id="@+id/tvAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@{data.supplierEntity.address,default=`tvAddress`}"
+                    android:textColor="@color/textColorWeek"
+                    android:textSize="@dimen/textNormal"
+                    app:layout_constraintStart_toStartOf="@+id/tvTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAmount" />
+
+                <TextView
+                    android:id="@+id/tvRetrospect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="查看追溯"
+                    android:textColor="@color/colorTextDarkWeek"
+                    android:textSize="@dimen/textNormal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+
+                <View
+                    android:id="@+id/textView186"
+                    android:layout_width="1px"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@color/colorDivider"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvRetrospect"
+                    app:layout_constraintEnd_toStartOf="@+id/tvRetrospect"
+                    app:layout_constraintTop_toTopOf="@+id/tvRetrospect" />
+
+                <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@{data.supplierEntity.createTime,default=`tvTime`}"
+                    android:textColor="@color/textColorWeek"
+                    android:textSize="@dimen/textNormal"
+                    app:layout_constraintStart_toEndOf="@+id/tvAddress"
+                    app:layout_constraintTop_toTopOf="@+id/tvAddress" />
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@{data.priceObs , default=`price`}"
+                    android:textColor="@color/colorMoney"
+                    android:textSize="@dimen/textBig"
+                    app:layout_constraintStart_toStartOf="@+id/tvAddress"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
+
+                <View
+                    android:id="@+id/textView192"
+                    style="@style/DividerH"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
+
+                <ImageView
+                    android:id="@+id/imageView24"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView192"
+                    app:srcCompat="@drawable/farming_ic_shield" />
+
+                <TextView
+                    android:id="@+id/textView195"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="私自打款有交易风险，推荐使用智慧新农平台担保交易以保证交易安全性和及时性，并能杜绝卖家收钱不发货等行为"
+                    android:textSize="@dimen/textSmall"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView24"
+                    app:layout_constraintTop_toTopOf="@+id/imageView24" />
+
+                <View
+                    android:id="@+id/textView199"
+                    android:layout_width="wrap_content"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/colorDivider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView195" />
+
+                <TextView
+                    android:id="@+id/textView201"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="货品规格"
+                    android:textColor="@color/colorTextWeekDark"
+                    android:textSize="@dimen/textNormal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView199" />
+
+                <View
+                    android:id="@+id/textView204"
+                    style="@style/DividerH"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView201" />
+
+                <TextView
+                    android:id="@+id/textView206"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="类型"
+                    android:textColor="@color/colorTextDarkWeek"
+                    android:textSize="@dimen/textNormal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView204" />
+
+                <TextView
+                    android:id="@+id/tvCropType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@{data.supplierEntity.title ,default=`tvCropType`}"
+                    android:textColor="@color/colorTextDark"
+                    android:textSize="@dimen/textNormal"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline14"
+                    app:layout_constraintStart_toEndOf="@+id/textView206"
+                    app:layout_constraintTop_toTopOf="@+id/textView206" />
+
+                <TextView
+                    android:id="@+id/textView208"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="包装"
+                    android:textColor="@color/colorTextDarkWeek"
+                    android:textSize="@dimen/textNormal"
+                    app:layout_constraintStart_toStartOf="@+id/textView206"
+                    app:layout_constraintTop_toBottomOf="@+id/textView206" />
+
+                <TextView
+                    android:id="@+id/tvPackage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@{data.supplierEntity.packType ,default=`tvPackage`}"
+                    android:textColor="@color/colorTextDark"
+                    android:textSize="@dimen/textNormal"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline14"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/textView208"
+                    app:layout_constraintTop_toTopOf="@+id/textView208" />
+
+                <TextView
+                    android:id="@+id/textView212"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="其他"
+                    android:textColor="@color/colorTextDarkWeek"
+                    android:textSize="@dimen/textNormal"
+                    app:layout_constraintStart_toStartOf="@+id/textView208"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPackage" />
+
+                <TextView
+                    android:id="@+id/tvOtherInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@{data.supplierEntity.otherInfo,default=`tvOtherInfo`}"
+                    android:textColor="@color/colorTextDark"
+                    android:textSize="@dimen/textNormal"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline14"
+                    app:layout_constraintStart_toEndOf="@+id/textView212"
+                    app:layout_constraintTop_toTopOf="@+id/textView212" />
+
+                <TextView
+                    android:id="@+id/tvSpecification"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@{data.supplierEntity.specification , default=`tvSpecification`}"
+                    android:textColor="@color/colorTextDark"
+                    android:textSize="@dimen/textNormal"
+                    app:layout_constraintEnd_toEndOf="@+id/textView204"
+                    app:layout_constraintStart_toEndOf="@+id/textView215"
+                    app:layout_constraintTop_toTopOf="@+id/tvCropType" />
+
+                <TextView
+                    android:id="@+id/textView215"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="规格"
+                    android:textColor="@color/colorTextDarkWeek"
+                    android:textSize="@dimen/textNormal"
+                    app:layout_constraintStart_toStartOf="@+id/guideline14"
+                    app:layout_constraintTop_toTopOf="@+id/tvSpecification" />
+
+                <TextView
+                    android:id="@+id/tvExpressage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:textColor="@color/colorTextDark"
+                    android:textSize="@dimen/textNormal"
+                android:text="@{data.supplierEntity.isShip ? `支持` : `不支持`,default=`tvExpressage`}"
+                app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView217"
+                    app:layout_constraintTop_toTopOf="@+id/tvPackage" />
+
+                <TextView
+                    android:id="@+id/textView217"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="快递"
+                    android:textSize="@dimen/textNormal"
+                    app:layout_constraintStart_toStartOf="@+id/guideline14"
+                    app:layout_constraintTop_toTopOf="@+id/tvPackage" />
+
+                <View
+                    android:id="@+id/textView218"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/colorDivider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvOtherInfo" />
+
+                <ImageView
+                    android:id="@+id/imgAvator"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    app:image="@{data.supplierEntity.userInfo.headimg}"
+                    app:imageCircle="@{true}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView218" />
+
+                <View
+                    android:id="@+id/textView220"
+                    style="@style/DividerH"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgAvator" />
+
+                <com.ogaclejapan.smarttablayout.SmartTabLayout
+                    android:id="@+id/tabIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:paddingBottom="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/viewPager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:stl_clickable="false"
+                    app:stl_customTabTextLayoutId="@layout/farming_custom_tab_circle"
+                    app:stl_dividerThickness="0dp"
+                    app:stl_indicatorColor="@color/colorAccent"
+                    app:stl_indicatorCornerRadius="6dp"
+                    app:stl_indicatorGravity="center"
+                    app:stl_indicatorInterpolation="linear"
+                    app:stl_indicatorThickness="6dp"
+                    app:stl_underlineThickness="0dp" />
+
+                <TextView
+                    android:id="@+id/txWholesale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/textColorWeek"
+                    android:textSize="@dimen/textNormal"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvPrice"
+                    app:layout_constraintStart_toEndOf="@+id/tvPrice"
+                    app:layout_constraintTop_toTopOf="@+id/tvPrice" />
+                <!--android:text="@{data.supplierEntity}"-->
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guideline14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="205dp" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@{data.supplierEntity.userInfo.realname ,default=`tvName`}"
+                    android:textColor="@color/colorTextDark"
+                    android:textSize="@dimen/textNormal"
+                    app:layout_constraintStart_toEndOf="@+id/imgAvator"
+                    app:layout_constraintTop_toTopOf="@+id/imgAvator" />
+
+                <TextView
+                    android:id="@+id/tvDescribe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="种植大户"
+                    android:textColor="@color/colorTextDarkWeek"
+                    android:textSize="@dimen/textSmall"
+                    app:layout_constraintStart_toStartOf="@+id/tvName"
+                    app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+                <TextView
+                    android:id="@+id/tvVerify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="认证详情"
+                    android:textColor="@color/colorTextDarkWeek"
+                    android:textSize="@dimen/textNormal"
+                    app:layout_constraintBottom_toTopOf="@+id/textView220"
+                    app:layout_constraintEnd_toStartOf="@+id/imgArrowsRight"
+                    app:layout_constraintTop_toBottomOf="@+id/textView218" />
+
+                <ImageView
+                    android:id="@+id/imgArrowsRight"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvVerify"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvVerify"
+                    app:srcCompat="@drawable/farming_ic_arrows_right" />
+
+                <TextView
+                    android:id="@+id/tvAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/textColorWeek"
+                    android:textSize="@dimen/textNormal"
+                android:text="@{data.supplierEntity.quantity+`公斤`,default=`tvAmount`}"
+                app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+            </android.support.constraint.ConstraintLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/tvReceivingGood"
+            android:layout_width="128dp"
+            android:layout_height="48dp"
+            android:background="@color/colorRed"
+            android:gravity="center"
+            android:text="我要收货"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTalk"
+            android:layout_width="128dp"
+            android:layout_height="48dp"
+            android:background="@color/colorYellow"
+            android:gravity="center"
+            android:text="聊生意"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="@dimen/textBig"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvReceivingGood" />
+
+        <View
+            android:id="@+id/textView223"
+            style="@style/DividerH"
+            app:layout_constraintBottom_toTopOf="@+id/tvReceivingGood"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/textView224"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvTalk"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvTalk" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

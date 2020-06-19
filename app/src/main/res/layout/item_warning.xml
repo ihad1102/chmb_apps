@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.zzwl.bakeMedicine.ui.warningHistory.holder.WarningHolder" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@{data.isGray ? @color/colorStarFill : @color/colorTextWhite}">
+
+
+        <TextView
+            android:id="@+id/tvWarningName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:text="@{data.warningName,default=`tvWarningName`}"
+            android:textColor="@{data.isTitle ? @color/colorGreenDark : @color/colorTextDarkWeek}"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvLevel"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvLevel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:text="@{data.level,default=`tvLevel`}"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintBottom_toBottomOf="@+id/tvWarningName"
+            app:layout_constraintEnd_toStartOf="@+id/tvTobaccoName"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvWarningName"
+            app:layout_constraintTop_toTopOf="@+id/tvWarningName" />
+
+        <TextView
+            android:id="@+id/tvTobaccoName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:text="@{data.tobaccoName,default=`tvTobaccoName`}"
+            android:textColor="@{data.isTitle ? @color/colorGreenDark : @color/colorTextDarkWeek}"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintBottom_toBottomOf="@+id/tvLevel"
+            app:layout_constraintEnd_toStartOf="@+id/tvOccurredTime"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvLevel"
+            app:layout_constraintTop_toTopOf="@+id/tvLevel" />
+
+        <TextView
+            android:id="@+id/tvOccurredTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:text="@{data.startTime,default=`tvOccurredTime`}"
+            android:textColor="@{data.isTitle ? @color/colorGreenDark : @color/colorTextDarkWeek}"
+            android:textSize="@dimen/textNormal"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTobaccoName"
+            app:layout_constraintEnd_toStartOf="@+id/tvResumeTime"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvTobaccoName"
+            app:layout_constraintTop_toTopOf="@+id/tvTobaccoName" />
+
+        <TextView
+            android:id="@+id/tvResumeTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:text="@{data.resumeTime,default=`tvResumeTime`}"
+            android:textColor="@{data.isTitle ? @color/colorGreenDark : @color/colorTextDarkWeek}"
+            android:textSize="@dimen/textNormal"
+            android:visibility="@{data.isCurrentWarning ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@+id/tvOccurredTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvOccurredTime"
+            app:layout_constraintTop_toTopOf="@+id/tvOccurredTime" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

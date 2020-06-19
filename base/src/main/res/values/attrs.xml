@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CenterTitleToolbar">
+        <attr name="titleTextAppearance" format="reference" />
+        <attr name="subtitleTextAppearance" format="reference" />
+        <attr name="title" />
+        <attr name="subtitle" />
+        <attr name="android:gravity" />
+        <attr name="titleMargin" format="dimension" />
+        <attr name="titleMarginStart" format="dimension" />
+        <attr name="titleMarginEnd" format="dimension" />
+        <attr name="titleMarginTop" format="dimension" />
+        <attr name="titleMarginBottom" format="dimension" />
+        <attr name="titleMargins" format="dimension" />
+        <attr name="contentInsetStart" />
+        <attr name="contentInsetEnd" />
+        <attr name="contentInsetLeft" />
+        <attr name="contentInsetRight" />
+        <attr name="contentInsetStartWithNavigation" />
+        <attr name="contentInsetEndWithActions" />
+        <attr name="maxButtonHeight" format="dimension" />
+        <attr name="collapseIcon" format="reference" />
+        <attr name="collapseContentDescription" format="string" />
+        <attr name="popupTheme" />
+        <attr name="navigationIcon" format="reference" />
+        <attr name="navigationContentDescription" format="string" />
+        <attr name="logo" />
+        <attr name="logoDescription" format="string" />
+        <attr name="titleTextColor" format="color" />
+        <attr name="subtitleTextColor" format="color" />
+        <attr name="android:minHeight" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zzwl.question">
+
+    <application>
+        <activity
+            android:name=".ui.postQuestion.PostQuestionActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".ui.postQuestion.ReplyActivity" />
+        <activity
+            android:name=".ui.questionDetail.QuestionDetailsActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".ui.questionDetail.ReplyListActivity" />
+        <activity android:name=".ui.myself.MyselfActivity" />
+        <activity android:name=".ui.expert.MyFollowedActivity" />
+        <activity android:name=".ui.message.MessageActivity" />
+        <receiver
+            android:name="com.zzwl.question.JPushReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <category android:name="com.zzwl.bakeMedicine" />
+            </intent-filter>
+        </receiver>
+        <activity android:name=".ui.expert.InvitationActivity" />
+        <activity android:name=".ui.expert.ExpertInformationActivity" />
+    </application>
+
+</manifest>

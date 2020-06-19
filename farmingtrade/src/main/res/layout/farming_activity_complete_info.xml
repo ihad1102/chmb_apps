@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zzwl.farmingtrade.ui.CompleteInfoActivity" />
+    </data>
+<android.support.constraint.ConstraintLayout
+
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/white">
+
+<TextView
+    android:id="@+id/textView174"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="16dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="24dp"
+    android:text="请选择身份，方便为您提供精准服务"
+    android:textColor="@color/colorTextDark"
+    android:textSize="@dimen/textBig"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/textView182"
+        style="@style/DividerH"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView174" />
+
+    <TextView
+        android:id="@+id/tvWholesaler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/farming_shape_wiki_agr_dark"
+        android:paddingBottom="2dp"
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp"
+        android:paddingTop="2dp"
+        android:text="批发商"
+        android:textColor="@color/colorTextDarkWeek"
+        android:textSize="@dimen/textBig"
+        android:onClick="@{data::onTextViewClick}"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView182" />
+
+<TextView
+    android:id="@+id/tvAgent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:text="代办/代理人"
+    android:paddingEnd="8dp"
+    android:paddingStart="8dp"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp"
+    android:textSize="@dimen/textBig"
+    android:background="@drawable/farming_shape_wiki_agr_dark"
+    android:textColor="@color/colorTextDarkWeek"
+    android:onClick="@{data::onTextViewClick}"
+    app:layout_constraintStart_toEndOf="@+id/tvWholesaler"
+    app:layout_constraintTop_toTopOf="@+id/tvWholesaler" />
+
+<TextView
+    android:id="@+id/tvCooperation"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:text="合作社"
+    android:paddingEnd="8dp"
+    android:paddingStart="8dp"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp"
+    android:textSize="@dimen/textBig"
+    android:background="@drawable/farming_shape_wiki_agr_dark"
+    android:textColor="@color/colorTextDarkWeek"
+    android:onClick="@{data::onTextViewClick}"
+    app:layout_constraintStart_toEndOf="@+id/tvAgent"
+    app:layout_constraintTop_toTopOf="@+id/tvAgent" />
+
+<TextView
+    android:id="@+id/tvHomeFarm"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:text="家庭农场"
+    android:paddingEnd="8dp"
+    android:paddingStart="8dp"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp"
+    android:onClick="@{data::onTextViewClick}"
+    android:textSize="@dimen/textBig"
+    android:background="@drawable/farming_shape_wiki_agr_dark"
+    android:textColor="@color/colorTextDarkWeek"
+    app:layout_constraintStart_toStartOf="@+id/tvWholesaler"
+    app:layout_constraintTop_toBottomOf="@+id/tvWholesaler" />
+
+<TextView
+    android:id="@+id/tvGrowers"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:text="种植户/种植企业"
+    android:paddingEnd="8dp"
+    android:paddingStart="8dp"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp"
+    android:textSize="@dimen/textBig"
+    android:onClick="@{data::onTextViewClick}"
+    android:background="@drawable/farming_shape_wiki_agr_dark"
+    android:textColor="@color/colorTextDarkWeek"
+    app:layout_constraintStart_toEndOf="@+id/tvHomeFarm"
+    app:layout_constraintTop_toTopOf="@+id/tvHomeFarm" />
+
+<TextView
+    android:id="@+id/tvFarmMachinery"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:text="农机厂商"
+    android:paddingEnd="8dp"
+    android:paddingStart="8dp"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp"
+    android:textSize="@dimen/textBig"
+    android:onClick="@{data::onTextViewClick}"
+    android:background="@drawable/farming_shape_wiki_agr_dark"
+    android:textColor="@color/colorTextDarkWeek"
+    app:layout_constraintStart_toEndOf="@+id/tvGrowers"
+    app:layout_constraintTop_toTopOf="@+id/tvGrowers" />
+
+<TextView
+    android:id="@+id/tvAgricultural"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:text="农资厂商"
+    android:paddingEnd="8dp"
+    android:paddingStart="8dp"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp"
+    android:textSize="@dimen/textBig"
+    android:onClick="@{data::onTextViewClick}"
+    android:background="@drawable/farming_shape_wiki_agr_dark"
+    android:textColor="@color/colorTextDarkWeek"
+    app:layout_constraintStart_toStartOf="@+id/tvHomeFarm"
+    app:layout_constraintTop_toBottomOf="@+id/tvHomeFarm" />
+
+<TextView
+    android:id="@+id/tvCompany"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:text="贸易公司"
+    android:paddingEnd="8dp"
+    android:paddingStart="8dp"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp"
+    android:textSize="@dimen/textBig"
+    android:onClick="@{data::onTextViewClick}"
+    android:background="@drawable/farming_shape_wiki_agr_dark"
+    android:textColor="@color/colorTextDarkWeek"
+    app:layout_constraintStart_toEndOf="@+id/tvAgricultural"
+    app:layout_constraintTop_toTopOf="@+id/tvAgricultural" />
+
+<TextView
+    android:id="@+id/tvDealers"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:text="经销商"
+    android:paddingEnd="8dp"
+    android:onClick="@{data::onTextViewClick}"
+    android:paddingStart="8dp"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp"
+    android:textSize="@dimen/textBig"
+    android:background="@drawable/farming_shape_wiki_agr_dark"
+    android:textColor="@color/colorTextDarkWeek"
+    app:layout_constraintStart_toEndOf="@+id/tvCompany"
+    app:layout_constraintTop_toTopOf="@+id/tvCompany" />
+
+<TextView
+    android:id="@+id/tvIndustries"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:text="其他行业"
+    android:paddingEnd="8dp"
+    android:paddingStart="8dp"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp"
+    android:textSize="@dimen/textBig"
+    android:onClick="@{data::onTextViewClick}"
+    android:background="@drawable/farming_shape_wiki_agr_dark"
+    android:textColor="@color/colorTextDarkWeek"
+    app:layout_constraintStart_toStartOf="@+id/tvAgricultural"
+    app:layout_constraintTop_toBottomOf="@+id/tvAgricultural" />
+
+<View
+    android:id="@+id/textView216"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="48dp"
+    android:background="@color/colorPageBg"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tvIndustries" />
+
+<TextView
+    android:id="@+id/tvCommit"
+    android:layout_width="0dp"
+    android:layout_height="40dp"
+    android:layout_marginEnd="24dp"
+    android:layout_marginStart="24dp"
+    android:layout_marginTop="24dp"
+    android:text="提交"
+    android:enabled="@{data.isSelectedObs}"
+    style="@style/RoundedRectangleButton"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/textView216" />
+
+<TextView
+    android:id="@+id/textView218"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:text="提交后，你可以在我的-资料管理页面重新选择"
+    android:textColor="@color/colorTextDarkWeek"
+    android:textSize="@dimen/textSmall"
+    app:layout_constraintEnd_toEndOf="@+id/tvCommit"
+    app:layout_constraintStart_toStartOf="@+id/tvCommit"
+    app:layout_constraintTop_toBottomOf="@+id/tvCommit" />
+</android.support.constraint.ConstraintLayout>
+</layout>

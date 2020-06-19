@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.zzwl.bakeMedicine">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--安装升级的apk权限-->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!-- 控制呼吸灯，振动器等，用于新消息提醒 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!--极光推送-->
+    <uses-permission android:name="com.zzwl.bakeMedicine.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="bMDEoYOjDXBtCfGGjfwVjZXkpaC29GuO" />
+
+        <activity android:name=".ui.user.OauthActivity" />
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:theme="@style/AppTheme"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.timeStatus.TimeStatusActivity" />
+        <activity android:name=".ui.tobaccoInfo.AllTobaccoActivity" />
+        <activity
+            android:name=".ui.timeStatus.LandscapeActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.timeStatus.HistoryCurveActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".ui.warningHistory.WarningHistoryActivity" />
+        <activity android:name=".ui.home.VersionInfoActivity" />
+        <activity android:name=".ui.tobaccoAdmin.TobaccoAdminActivity" />
+        <activity android:name=".ui.map.MapActivity" />
+        <activity android:name=".ui.scanQrCode.ScanActivity" />
+        <activity android:name=".ui.curveSetting.CurveSettingActivity" />
+        <activity android:name=".weidget.ImagePreviewActivity" />
+        <activity
+            android:name=".ui.notice.NoticeActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".ui.about.AboutActivity" />
+        <activity android:name=".ui.about.UserAgreementActivity" />
+        <activity android:name=".ui.timeStatus.heatPump.TimeStatusActivity" />
+        <activity android:name=".ui.timeStatus.heatPump.OutputActivity"/>
+        <activity android:name=".ui.timeStatus.heatPump.TempActivity"/>
+
+        <provider
+            android:name="cn.jpush.android.service.DataProvider"
+            android:authorities="com.zzwl.app.DataProvider"
+            android:exported="true"
+            tools:node="replace"
+            tools:replace="android:exported" />
+    </application>
+
+</manifest>
